@@ -2,8 +2,11 @@
 resource "aws_cloudfront_distribution" "cdn" {
   # The S3 static website endpoint as the origin
   origin {
-    domain_name = aws_s3_bucket.website.website_endpoint
+    domain_name = aws_s3_bucket.website.bucket_regional_domain_name
     origin_id   = "s3-website"
+    s3_origin_config {
+      origin_access_identity = "" # Eğer OAI kullanıyorsan buraya ekle
+    }
   }
 
   enabled             = true  # Enable the distribution
@@ -23,14 +26,6 @@ resource "aws_cloudfront_distribution" "cdn" {
 
     # Use AWS Managed CachingOptimized policy for efficient caching
     cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6"  # Managed-CachingOptimized
-
-    # Do not forward query strings or cookies to the origin
-    forwarded_values {
-      query_string = false
-      cookies {
-        forward = "none"
-      }
-    }
   }
 
   # Use the lowest cost edge locations (US, Canada, Europe)

@@ -10,4 +10,14 @@ variable "aws_region" {
 variable "domain_name" {
   description = "Main domain name"
   default     = "ibrahimkilicaslan.click"
+}
+
+variable "aliases" {
+  description = "List of domain names (CNAMEs) for CloudFront"
+  type        = list(string)
+  default     = [
+    "ibrahimkilicaslan.click",
+    "info.ibrahimkilicaslan.click",
+    "www.ibrahimkilicaslan.click"
+  ]
 } 

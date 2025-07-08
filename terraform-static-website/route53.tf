@@ -5,20 +5,25 @@ resource "aws_route53_zone" "main" {
   name = var.domain_name
 }
 
-# Create DNS records for ACM certificate validation.
+locals {
+  unique_cert_validations = distinct([
+    for dvo in aws_acm_certificate.cert.domain_validation_options : {
+      name   = dvo.resource_record_name
+      type   = dvo.resource_record_type
+      record = dvo.resource_record_value
+    }
+  ])
+}
+
 resource "aws_route53_record" "cert_validation" {
   for_each = {
-    for dvo in aws_acm_certificate.cert.domain_validation_options : dvo.domain_name => {
-      name   = dvo.resource_record_name
-      record = dvo.resource_record_value
-      type   = dvo.resource_record_type
-    }
+    for dvo in local.unique_cert_validations : dvo.name => dvo
   }
   zone_id = aws_route53_zone.main.zone_id
   name    = each.value.name
   type    = each.value.type
-  records = [each.value.record]
   ttl     = 60
+  records = [each.value.record]
 }
 
 # Create alias A records for each domain/subdomain to point to CloudFront
