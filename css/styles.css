@@ -279,12 +279,12 @@ nav .nav-links a:hover::after {
 /* --- Custom Contact Section Styles --- */
 .contact-list {
     max-width: 400px;
-    margin: 0 0 2em auto; /* Align right on desktop */
+    margin: 0 auto 2em 0; /* Align left under KONTAKT */
     display: flex;
     flex-direction: column;
     gap: 0.2em;
-    float: right;
-    clear: both;
+    float: none;
+    clear: none;
 }
 .contact-row {
     display: flex;
