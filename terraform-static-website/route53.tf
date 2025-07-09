@@ -29,11 +29,7 @@ resource "aws_route53_record" "cert_validation" {
 # Create alias A records for each domain/subdomain to point to CloudFront
 # IMPORTANT: All DNS records are managed by Terraform. Delete any manual records before applying.
 resource "aws_route53_record" "cloudfront_alias" {
-  for_each = toset([
-    "ibrahimkilicaslan.click",
-    "info.ibrahimkilicaslan.click",
-    "www.ibrahimkilicaslan.click"
-  ])
+  for_each = toset(var.aliases)
   zone_id = aws_route53_zone.main.zone_id
   name    = each.value
   type    = "A"
