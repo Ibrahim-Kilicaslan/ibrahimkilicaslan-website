@@ -3,7 +3,7 @@
 # The public endpoint for the S3 static website (useful for testing or troubleshooting)
 output "s3_website_endpoint" {
   description = "S3 static website endpoint"
-  value       = aws_s3_bucket.website.website_endpoint
+  value       = aws_s3_bucket_website_configuration.website.website_endpoint
 }
 
 # The domain name of the CloudFront distribution (useful for DNS configuration and testing)

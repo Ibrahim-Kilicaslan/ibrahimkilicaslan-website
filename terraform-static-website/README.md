@@ -54,7 +54,7 @@ terraform plan
 
 ### 5. **Apply the Infrastructure**
 ```sh
-terraform apply
+terraform apply -target=aws_acm_certificate.cert -target=aws_route53_zone.main
 ```
 
 ### 6. **Check the Outputs**
@@ -124,6 +124,49 @@ terraform apply
 
 ---
 
+
+## 💡 Extra Tips
+- This module is designed for learning, prototyping, and production use.
+- You can easily extend it for multi-environment (dev/stage/prod) setups by using workspaces or variable overrides.
+- For private/static sites, consider using CloudFront Origin Access Control (OAC) or OAI for S3.
+- Always review AWS costs before deploying in production.
+- Pull requests and suggestions are welcome!
+
+
+## ⚙️ Step-by-Step: Two-Stage Apply for ACM/Route53 Validation
+
+If you encounter errors related to ACM certificate DNS validation (such as 'Invalid for_each argument' or 'value not known until apply'), follow these steps to resolve the issue:
+
+### **Step 1: Apply Only ACM Certificate and Route53 Hosted Zone**
+1. Open your terminal and navigate to the `terraform-static-website` directory.
+2. Run the following command:
+   ```sh
+   terraform apply -target=aws_acm_certificate.cert -target=aws_route53_zone.main
+   ```
+   - This will create the ACM certificate and the Route53 hosted zone.
+   - Terraform will output the DNS validation records required for ACM.
+
+### **Step 2: Wait for DNS Validation Records to Appear**
+3. Check the outputs or the AWS Console to see the required CNAME validation records.
+4. Make sure these CNAME records are present in your Route53 hosted zone (Terraform usually creates them automatically in the next step).
+
+### **Step 3: Apply the Rest of the Infrastructure**
+5. Run the following command to create all remaining resources:
+   ```sh
+   terraform apply
+   ```
+   - This will create the DNS validation records (if not already present), CloudFront, S3, and all other resources.
+
+### **Step 4: Wait for ACM Validation and DNS Propagation**
+6. ACM may take several minutes to validate the certificate (especially if you just updated your domain's NS records).
+7. You can monitor the certificate status in the AWS Certificate Manager Console. Once it is 'Issued', HTTPS will work for your site.
+
+**Tip:**
+- If you change your domain's NS records, DNS propagation can take 5–30 minutes (sometimes longer). ACM validation will not succeed until propagation is complete.
+- If you see 'already exists' errors, check for duplicate DNS records in Route53 and remove any manual entries.
+
+---
+
 ## 📝 License
 MIT
 
@@ -133,10 +176,3 @@ MIT
 Ibrahim Kilicaslan
 
 ---
-
-## 💡 Extra Tips
-- This module is designed for learning, prototyping, and production use.
-- You can easily extend it for multi-environment (dev/stage/prod) setups by using workspaces or variable overrides.
-- For private/static sites, consider using CloudFront Origin Access Control (OAC) or OAI for S3.
-- Always review AWS costs before deploying in production.
-- Pull requests and suggestions are welcome! 

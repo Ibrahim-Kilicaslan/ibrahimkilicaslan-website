@@ -186,3 +186,32 @@ Ibrahim Kilicaslan
 
 ## 💡 Contributing
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+## 📚 Resources
+- [Terraform Documentation](https://www.terraform.io/docs/)
+- [AWS S3 Static Website Hosting](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html)
+- [AWS CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)
+- [AWS Route53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)
+- [GitHub Actions](https://docs.github.com/en/actions)
+
+---
+
+## 📝 License
+MIT
+
+---
+
+## 👤 Author
+Ibrahim Kilicaslan
+
+---
+
+## 💡 Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+## ⚠️ Important Note on DNS and ACM Validation
+

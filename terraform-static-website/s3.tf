@@ -1,13 +1,19 @@
-# S3 bucket and policy for static website hosting
-
-# Create an S3 bucket to host the static website
+# S3 bucket for static website hosting
 resource "aws_s3_bucket" "website" {
-  bucket = var.domain_name
-  website {
-    index_document = "index.html"   # Main entry point for the website
-    error_document = "error.html"   # Error page for the website
+  bucket        = var.domain_name
+  force_destroy = true
+}
+
+resource "aws_s3_bucket_website_configuration" "website" {
+  bucket = aws_s3_bucket.website.id
+
+  index_document {
+    suffix = "index.html"
   }
-  force_destroy = true               # Allow bucket to be destroyed even if not empty
+
+  error_document {
+    key = "error.html"
+  }
 }
 
 # Allow public read access to all objects in the S3 bucket
