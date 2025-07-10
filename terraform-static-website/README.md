@@ -4,6 +4,72 @@ This module provides a complete, modular, and production-ready Infrastructure as
 
 ---
 
+## 🚀 Step-by-Step: Deploy Your Static Website on AWS
+
+### **Step 1: Clone the Repository**
+```sh
+git clone <your-repo-url>
+cd terraform-static-website
+```
+
+### **Step 2: Configure Your Variables**
+- Open `variables.tf` in your editor.
+- Set your AWS region, main domain, and all subdomains (aliases):
+  - `aws_region`: AWS region (default: `us-east-1`)
+  - `domain_name`: Your main domain (e.g. `example.com`)
+  - `aliases`: List of all domains/subdomains (e.g. `www.example.com`, `info.example.com`)
+- **Tip:** To add a new subdomain, just add it to the `aliases` list. All DNS and CloudFront settings will update automatically!
+
+### **Step 3: Initialize Terraform**
+```sh
+terraform init
+```
+
+### **Step 4: Review the Plan**
+```sh
+terraform plan
+```
+- This shows what resources will be created or changed.
+
+### **Step 5: Two-Stage Apply for ACM/Route53 Validation**
+If you see errors about ACM DNS validation or for_each arguments, use this two-step process:
+
+**A. First, create only the ACM certificate and Route53 hosted zone:**
+```sh
+terraform apply -target=aws_acm_certificate.cert -target=aws_route53_zone.main
+```
+- This creates the certificate and hosted zone, and outputs the DNS validation records.
+
+**B. Then, apply the rest of the infrastructure:**
+```sh
+terraform apply
+```
+- This creates the DNS validation records, CloudFront, S3, and all other resources.
+
+### **Step 6: Update Your Domain's NS Records**
+- Go to your domain registrar's panel.
+- Replace all existing NS (Name Server) records with the four NS records from your Route53 hosted zone (see AWS Console → Route53 → Hosted zones).
+- **Important:** DNS propagation can take 5–30 minutes (sometimes longer). ACM validation and HTTPS will not work until this is complete.
+
+### **Step 7: Check the Outputs**
+- After apply, Terraform will output:
+  - S3 website endpoint
+  - CloudFront distribution domain
+  - Route53 hosted zone name
+
+### **Step 8: Upload Your Website Files**
+- Use the AWS Console or CLI to upload your static website files (index.html, images, etc.) to the S3 bucket.
+- Example:
+  ```sh
+  aws s3 sync ../deploy-dist/ s3://<your-bucket-name> --delete
+  ```
+
+### **Step 9: Test Your Website**
+- Open your domain in a browser (e.g. `https://yourdomain.com`).
+- Check that HTTPS works and your site loads correctly.
+
+---
+
 ## 🚀 What Does This Module Do?
 - **Creates an S3 bucket** for static website hosting
 - **Sets up CloudFront** for global CDN, HTTPS, and custom domains
@@ -23,56 +89,6 @@ This module provides a complete, modular, and production-ready Infrastructure as
 - `route53.tf` – Hosted zone, DNS records, validation records
 - `cloudfront.tf` – CloudFront distribution (CDN, HTTPS, aliases)
 - `outputs.tf` – Outputs for endpoints and zone names
-
----
-
-## ⚙️ How to Use This Module (Step by Step)
-
-### 1. **Clone the Repository**
-```sh
-git clone <your-repo-url>
-cd terraform-static-website
-```
-
-### 2. **Configure Your Variables**
-Edit `variables.tf`:
-- `aws_region`: AWS region for your resources (default: `us-east-1`)
-- `domain_name`: Your main domain (e.g. `example.com`)
-- `aliases`: List of all domains/subdomains (e.g. `www.example.com`, `info.example.com`)
-
-> **Tip:** To add a new subdomain, just add it to the `aliases` list. All DNS and CloudFront settings will update automatically!
-
-### 3. **Initialize Terraform**
-```sh
-terraform init
-```
-
-### 4. **Review the Plan**
-```sh
-terraform plan
-```
-
-### 5. **Apply the Infrastructure**
-```sh
-terraform apply -target=aws_acm_certificate.cert -target=aws_route53_zone.main
-```
-
-### 6. **Check the Outputs**
-- S3 website endpoint
-- CloudFront distribution domain
-- Route53 hosted zone name
-
----
-
-## 📄 Explanation of Each File
-
-- **main.tf**: Sets up AWS providers. Uses a second provider for `us-east-1` (required for ACM certificates used by CloudFront).
-- **variables.tf**: All user-editable variables. Only change values here for region, domain, and subdomains.
-- **s3.tf**: Creates the S3 bucket, enables static website hosting, sets up public access, and applies a bucket policy for public read (required for static sites).
-- **cert.tf**: Requests a wildcard SSL certificate from ACM (for both root and all subdomains), and validates it automatically via DNS.
-- **route53.tf**: Creates the hosted zone, all DNS records (A/alias for CloudFront, CNAME for ACM validation), and ensures everything is managed by Terraform.
-- **cloudfront.tf**: Sets up CloudFront distribution, connects it to S3, enables HTTPS, and adds all domains/subdomains as aliases.
-- **outputs.tf**: Exposes useful endpoints and names for integration and verification.
 
 ---
 
@@ -109,7 +125,7 @@ terraform apply -target=aws_acm_certificate.cert -target=aws_route53_zone.main
 
 ## 🆘 Troubleshooting & FAQ
 - **Terraform apply fails with "already exists"**: There may be a manual record or resource in AWS. Delete it or import it into Terraform.
-- **ACM validation stuck**: Check that Route53 CNAME validation records exist and are correct.
+- **ACM validation stuck**: Check that Route53 CNAME validation records exist and are correct. Make sure your domain's NS records match the Route53 hosted zone.
 - **CloudFront not serving HTTPS**: Certificate must be in `us-east-1` and fully validated.
 - **S3 access denied**: Check bucket policy and public access block settings.
 - **DNS not resolving**: Make sure your domain's NS records at your registrar match the Route53 hosted zone.
@@ -133,40 +149,6 @@ terraform apply -target=aws_acm_certificate.cert -target=aws_route53_zone.main
 - Pull requests and suggestions are welcome!
 
 
-## ⚙️ Step-by-Step: Two-Stage Apply for ACM/Route53 Validation
-
-If you encounter errors related to ACM certificate DNS validation (such as 'Invalid for_each argument' or 'value not known until apply'), follow these steps to resolve the issue:
-
-### **Step 1: Apply Only ACM Certificate and Route53 Hosted Zone**
-1. Open your terminal and navigate to the `terraform-static-website` directory.
-2. Run the following command:
-   ```sh
-   terraform apply -target=aws_acm_certificate.cert -target=aws_route53_zone.main
-   ```
-   - This will create the ACM certificate and the Route53 hosted zone.
-   - Terraform will output the DNS validation records required for ACM.
-
-### **Step 2: Wait for DNS Validation Records to Appear**
-3. Check the outputs or the AWS Console to see the required CNAME validation records.
-4. Make sure these CNAME records are present in your Route53 hosted zone (Terraform usually creates them automatically in the next step).
-
-### **Step 3: Apply the Rest of the Infrastructure**
-5. Run the following command to create all remaining resources:
-   ```sh
-   terraform apply
-   ```
-   - This will create the DNS validation records (if not already present), CloudFront, S3, and all other resources.
-
-### **Step 4: Wait for ACM Validation and DNS Propagation**
-6. ACM may take several minutes to validate the certificate (especially if you just updated your domain's NS records).
-7. You can monitor the certificate status in the AWS Certificate Manager Console. Once it is 'Issued', HTTPS will work for your site.
-
-**Tip:**
-- If you change your domain's NS records, DNS propagation can take 5–30 minutes (sometimes longer). ACM validation will not succeed until propagation is complete.
-- If you see 'already exists' errors, check for duplicate DNS records in Route53 and remove any manual entries.
-
----
-
 ## 📝 License
 MIT
 
@@ -174,5 +156,54 @@ MIT
 
 ## 👤 Author
 Ibrahim Kilicaslan
+
+---
+
+## 🗑️ How to Remove a Resource from Terraform State (State Management)
+
+If you need to remove a resource from Terraform state (for example, after deleting it manually in AWS), follow these steps:
+
+### 1. List All Resources in State
+Run:
+```sh
+terraform state list
+```
+This command shows all resources currently tracked in your state file.
+
+### 2. Find the Correct Resource Address
+Look for a line similar to:
+```
+aws_route53_record.cert_validation["your-key"]
+```
+or
+```
+aws_route53_record.cert_validation
+```
+or another resource name.
+
+### 3. Copy the Exact Address
+Copy the full line exactly as shown in the output.
+
+### 4. Remove the Resource from State
+Run:
+```sh
+terraform state rm 'paste-the-exact-address-here'
+```
+**Example:**
+```sh
+terraform state rm 'aws_route53_record.cert_validation["your-key"]'
+```
+or
+```sh
+terraform state rm aws_route53_record.cert_validation
+```
+(Use quotes if the address contains special characters or brackets)
+
+### 5. If You Can't Find the Resource
+If the resource is not listed in the state, you do not need to remove it.
+You can safely continue with:
+```sh
+terraform apply
+```
 
 ---
