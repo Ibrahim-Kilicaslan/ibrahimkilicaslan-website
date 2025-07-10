@@ -149,14 +149,6 @@ terraform apply
 
 ## 📄 Explanation of Each File
 
-## 📝 License
-MIT
-
----
-
-## 👤 Author
-Ibrahim Kilicaslan
-
 ---
 
 ## 🗑️ How to Remove a Resource from Terraform State (State Management)
@@ -205,3 +197,11 @@ You can safely continue with:
 ```sh
 terraform apply
 ```
+
+## 📝 License
+MIT
+
+---
+
+## 👤 Author
+Ibrahim Kilicaslan

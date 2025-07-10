@@ -534,3 +534,106 @@ section h2 {
         padding: 16px 8px;
     }
 }
+
+/* Developerfolio-style Menu Navigation */
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu li {
+    display: flex;
+    align-items: center;
+}
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.15rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+.menu a:hover {
+    background: #FFD70022;
+    color: #FFD700;
+}
+/* Switch (Dark Mode Toggle) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    margin-left: 8px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    border-radius: 24px;
+    transition: background 0.3s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+input:checked + .slider {
+    background-color: #252C64;
+}
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+.slider .emoji {
+    position: absolute;
+    right: 4px;
+    top: 2px;
+    pointer-events: none;
+}
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #181818;
+    color: #f4f4f9;
+}
+body.dark-mode .education-section,
+body.dark-mode .education-card-new {
+    background: #23272f;
+    color: #f4f4f9;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+body.dark-mode .education-school,
+body.dark-mode .education-degree {
+    color: #FFD700;
+}
+body.dark-mode .education-date {
+    color: #bbb;
+}
+body.dark-mode .education-bullets li {
+    color: #eee;
+}
+body.dark-mode .menu a {
+    color: #FFD700;
+}
+body.dark-mode .menu a:hover {
+    background: #FFD70044;
+    color: #252C64;
+}
+body.dark-mode nav {
+    background: #181818;
+}

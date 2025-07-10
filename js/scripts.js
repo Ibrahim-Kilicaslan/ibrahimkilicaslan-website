@@ -26,3 +26,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Dark mode toggle
+window.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  // Load preference
+  if (localStorage.getItem('darkMode') === 'true') {
+    body.classList.add('dark-mode');
+    if (toggle) toggle.checked = true;
+  }
+  if (toggle) {
+    toggle.addEventListener('change', function () {
+      if (toggle.checked) {
+        body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'true');
+      } else {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'false');
+      }
+    });
+  }
+});
