@@ -348,25 +348,28 @@ section h2 {
 
 /* Education Section Modern Card Styles */
 .education-section {
-    margin: 40px 0;
-    padding: 20px;
+    margin: 40px 0 40px 0;
+    padding: 20px 0 20px 0;
     background: #f4f4f9;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    max-width: 900px;
+    width: 100%;
 }
 .education-heading {
-    text-align: center;
+    text-align: left;
     font-size: 2.2rem;
     color: #252C64;
     margin-bottom: 32px;
     letter-spacing: 1px;
+    margin-left: 32px;
 }
 .education-card-container {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    max-width: 900px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
 }
 .education-card {
     display: flex;
@@ -453,6 +456,7 @@ section h2 {
     margin-bottom: 32px;
     transition: box-shadow 0.3s;
     gap: 28px;
+    width: 100%;
 }
 .education-card-new:hover {
     box-shadow: 0 8px 24px rgba(37,44,100,0.18);
@@ -519,5 +523,14 @@ section h2 {
     }
     .education-logo-col {
         margin-bottom: 8px;
+    }
+}
+@media (max-width: 1000px) {
+    .education-section {
+        max-width: 100%;
+        padding: 10px 0;
+    }
+    .education-card-new {
+        padding: 16px 8px;
     }
 }
