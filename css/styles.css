@@ -345,3 +345,99 @@ section h2 {
         margin: 0 auto 2em auto;
     }
 }
+
+/* Education Section Modern Card Styles */
+.education-section {
+    margin: 40px 0;
+    padding: 20px;
+    background: #f4f4f9;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.education-heading {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #252C64;
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+}
+.education-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.education-card {
+    display: flex;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(37,44,100,0.10);
+    padding: 24px 32px;
+    align-items: center;
+    animation: fadeIn 1s;
+    transition: box-shadow 0.3s;
+}
+.education-card:hover {
+    box-shadow: 0 8px 24px rgba(37,44,100,0.18);
+}
+.education-card-left {
+    flex: 0 0 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 32px;
+}
+.education-roundedimg {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #FFD700;
+    background: #fff;
+}
+.education-card-right {
+    flex: 1;
+}
+.education-text-school {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #252C64;
+    margin-bottom: 6px;
+}
+.education-text-subHeader {
+    font-size: 1.1rem;
+    color: #2E398D;
+    margin-bottom: 4px;
+}
+.education-text-duration {
+    font-size: 0.98rem;
+    color: #888;
+    margin-bottom: 8px;
+}
+.education-text-desc {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0;
+}
+.education-card-border {
+    height: 2px;
+    background: linear-gradient(90deg, #FFD700 0%, #252C64 100%);
+    margin: 18px 0 0 0;
+    border-radius: 1px;
+    opacity: 0.18;
+}
+@media (max-width: 700px) {
+    .education-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 10px;
+    }
+    .education-card-left {
+        margin-right: 0;
+        margin-bottom: 12px;
+    }
+    .education-card-container {
+        gap: 18px;
+    }
+}

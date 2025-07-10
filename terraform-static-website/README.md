@@ -1,4 +1,4 @@
-# Terraform Static Website on AWS
+# 🟦 Terraform Static Website on AWS
 
 This module provides a complete, modular, and production-ready Infrastructure as Code (IaC) solution for hosting a static website on AWS using S3, CloudFront, Route53, and ACM, all managed with Terraform. It is designed to be clear, reusable, and easy for anyone to adapt for their own projects.
 
@@ -140,7 +140,6 @@ terraform apply
 
 ---
 
-
 ## 💡 Extra Tips
 - This module is designed for learning, prototyping, and production use.
 - You can easily extend it for multi-environment (dev/stage/prod) setups by using workspaces or variable overrides.
@@ -148,6 +147,7 @@ terraform apply
 - Always review AWS costs before deploying in production.
 - Pull requests and suggestions are welcome!
 
+## 📄 Explanation of Each File
 
 ## 📝 License
 MIT
@@ -205,5 +205,3 @@ You can safely continue with:
 ```sh
 terraform apply
 ```
-
----
