@@ -191,6 +191,7 @@
                 <li><a href="#kompetenzen">KOMPETENZEN</a></li>
                 <li><a href="#projekte">PROJEKTE</a></li>
                 <li><a href="#bildungs">BILDUNG</a></li>
+                <li><a href="#blogs">BLOGS</a></li>
                 <li><a href="#kontakt">KONTAKT</a></li>
                 <li>
                   <a>
@@ -430,6 +431,98 @@
                 <div class="contact-value">
                     <span>Berlin, Deutschland</span>
                 </div>
+            </div>
+        </section>
+
+        <section id="blogs">
+            <div class="blog-article">
+                <h2>How I Built and Deployed My Professional CV Website on AWS with Terraform &amp; GitHub Actions</h2>
+                <p><strong>Author:</strong> Ibrahim Kilicaslan<br><strong>Date:</strong> [Add your publish date]</p>
+                <h3>Introduction</h3>
+                <p>As a Cloud &amp; DevOps Engineer, I wanted my personal website to reflect not only my professional experience but also my technical skills in automation, cloud infrastructure, and best practices. Instead of using a simple website builder, I decided to build and deploy my CV website using AWS services (S3, Route 53, CloudFront, ACM) and automate everything with Terraform and GitHub Actions.</p>
+                <p>In this post, I'll share my journey, the architecture, the challenges I faced, and a step-by-step guide for anyone who wants to build a modern, secure, and fully automated static website on AWS.</p>
+                <h3>Why Not Just Use a Website Builder?</h3>
+                <ul>
+                    <li><strong>Full control</strong> over infrastructure and deployment</li>
+                    <li><strong>Learning and showcasing</strong> real-world DevOps and cloud skills</li>
+                    <li><strong>Scalability and security</strong> with AWS best practices</li>
+                    <li><strong>Automation</strong>: No manual uploads, no FTP, no "click and pray" deployments</li>
+                </ul>
+                <h3>Architecture Overview</h3>
+                <p>The website is a static HTML/CSS/JS site, hosted on AWS S3, delivered globally via CloudFront, secured with HTTPS (ACM), and managed DNS with Route 53. All infrastructure is defined as code with Terraform, and deployments are automated with GitHub Actions.</p>
+                <ul>
+                    <li><strong>S3</strong>: Static website hosting</li>
+                    <li><strong>CloudFront</strong>: CDN, HTTPS, custom domains</li>
+                    <li><strong>Route 53</strong>: DNS management</li>
+                    <li><strong>ACM</strong>: Free SSL certificates (auto-renew)</li>
+                    <li><strong>GitHub Actions</strong>: CI/CD for automatic deployment</li>
+                </ul>
+                <h3>Step-by-Step: How I Did It</h3>
+                <h4>1. Design &amp; Frontend</h4>
+                <ul>
+                    <li>Built a modern, responsive CV website using HTML, CSS, and JavaScript.</li>
+                    <li>Modularized sections for easy editing (e.g., education, experience, projects).</li>
+                </ul>
+                <h4>2. Infrastructure as Code with Terraform</h4>
+                <ul>
+                    <li>Created a modular Terraform setup: S3 bucket, CloudFront, Route 53, ACM certificate</li>
+                    <li>All variables (domain, subdomains, region) are in <code>variables.tf</code> for easy customization.</li>
+                </ul>
+                <h4>3. CI/CD with GitHub Actions</h4>
+                <ul>
+                    <li>Set up a workflow that syncs all website files to S3 on every push to <code>main</code></li>
+                    <li>Invalidates CloudFront cache so changes are live instantly</li>
+                    <li>AWS credentials and CloudFront Distribution ID are stored as GitHub Secrets for security.</li>
+                </ul>
+                <h4>4. Domain &amp; DNS</h4>
+                <ul>
+                    <li>Registered my domain (<code>ibrahimkilicaslan.click</code>)</li>
+                    <li>Managed all DNS records via Terraform/Route 53</li>
+                    <li>Updated registrar NS records to point to Route 53</li>
+                </ul>
+                <h4>5. SSL &amp; Security</h4>
+                <ul>
+                    <li>Used ACM for a wildcard SSL certificate (auto-renew, no manual steps)</li>
+                    <li>Enforced HTTPS via CloudFront</li>
+                    <li>S3 bucket is public only for static site content, not for uploads or sensitive data</li>
+                </ul>
+                <h3>What Makes This Project Unique?</h3>
+                <ul>
+                    <li><strong>Everything is code</strong>: No manual AWS Console steps after initial setup</li>
+                    <li><strong>Professional documentation</strong>: Step-by-step README, troubleshooting, and customization tips</li>
+                    <li><strong>Beginner-friendly</strong>: Anyone can fork, edit, and deploy their own site with minimal AWS knowledge</li>
+                    <li><strong>Scalable and secure</strong>: Uses AWS best practices for static sites</li>
+                </ul>
+                <h3>Challenges &amp; Solutions</h3>
+                <ul>
+                    <li><strong>ACM DNS validation</strong>: Required a two-step Terraform apply (first create cert, then validate)</li>
+                    <li><strong>S3 bucket name conflicts</strong>: Used unique domain-based names</li>
+                    <li><strong>CloudFront not updating</strong>: Solved with automatic cache invalidation in CI/CD</li>
+                    <li><strong>DNS propagation delays</strong>: Documented troubleshooting steps for users</li>
+                </ul>
+                <h3>How You Can Build Your Own</h3>
+                <ol>
+                    <li><strong>Fork or clone my repo:</strong> <a href="https://github.com/Ibrahim-Kilicaslan/ibrahimkilicaslan-website" target="_blank">GitHub - ibrahimkilicaslan-website</a></li>
+                    <li><strong>Edit your content:</strong> Update <code>index.html</code>, <code>css/styles.css</code>, and other assets</li>
+                    <li><strong>Customize your domain:</strong> Edit <code>terraform-static-website/variables.tf</code></li>
+                    <li><strong>Deploy infrastructure:</strong> Run <code>terraform init</code> and <code>terraform apply</code> (see README for details)</li>
+                    <li><strong>Set up GitHub Secrets:</strong> Add your AWS keys and CloudFront Distribution ID</li>
+                    <li><strong>Push your changes:</strong> Every push to <code>main</code> will auto-deploy your site to AWS!</li>
+                </ol>
+                <h3>Resources &amp; References</h3>
+                <ul>
+                    <li><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html" target="_blank">AWS S3 Static Website Hosting</a></li>
+                    <li><a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html" target="_blank">AWS CloudFront Documentation</a></li>
+                    <li><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html" target="_blank">AWS Route 53 Documentation</a></li>
+                    <li><a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html" target="_blank">AWS ACM Documentation</a></li>
+                    <li><a href="https://www.terraform.io/docs/" target="_blank">Terraform Documentation</a></li>
+                    <li><a href="https://docs.github.com/en/actions" target="_blank">GitHub Actions Documentation</a></li>
+                    <li><a href="https://github.com/Ibrahim-Kilicaslan/ibrahimkilicaslan-website" target="_blank">My GitHub Repo</a></li>
+                </ul>
+                <h3>Final Thoughts</h3>
+                <p>Building your own website with AWS and full automation is not just a great learning experience—it's also a way to stand out as a DevOps or Cloud Engineer.<br>
+                If you want a modern, secure, and fully automated personal site, feel free to use my repo as a template and make it your own!</p>
+                <p><strong>Happy building! 🚀<br>Ibrahim Kilicaslan</strong></p>
             </div>
         </section>
     </main>
