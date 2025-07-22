@@ -16,7 +16,7 @@ This project is a fully automated, professional CV (resume) website hosted on AW
 
 ---
 
-## 🗂️ Project Structure
+## 🗂️ Project Structure 
 
 ```
 cv-website/
@@ -64,6 +64,24 @@ cv-website/
    - Modular HTML: `src/`
 3. **Preview locally:**
    - Use VS Code Live Server or `python3 -m http.server` to preview.
+
+---
+
+### 💾 Saving and Pushing Your Changes
+
+To save your changes and push them to GitHub:
+
+```sh
+git add .
+git commit -m "Your commit message"
+git push
+```
+
+- `git add .` : Stages all changes
+- `git commit -m "Your commit message"` : Adds a description to your changes
+- `git push` : Sends your changes to GitHub
+
+> Note: You need to have permission (e.g., be a collaborator) to push to the repository.
 
 ---
 
