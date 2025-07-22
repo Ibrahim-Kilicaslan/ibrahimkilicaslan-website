@@ -67,23 +67,6 @@ cv-website/
 
 ---
 
-### 💾 Saving and Pushing Your Changes
-
-To save your changes and push them to GitHub:
-
-```sh
-git add .
-git commit -m "Your commit message"
-git push
-```
-
-- `git add .` : Stages all changes
-- `git commit -m "Your commit message"` : Adds a description to your changes
-- `git push` : Sends your changes to GitHub
-
-> Note: You need to have permission (e.g., be a collaborator) to push to the repository.
-
----
 
 ## ☁️ Infrastructure as Code (Terraform)
 
@@ -151,6 +134,52 @@ Every push to `main` triggers a workflow that:
 - Only web files are deployed (Terraform, .git, temp files, etc. are ignored)
 - Secure: AWS credentials are never stored in code, only as GitHub secrets
 - Fast: Only changed files are uploaded
+
+---
+
+### 💾 Saving and Pushing Your Changes
+
+To save your changes and push them to GitHub:
+
+```sh
+git add .
+git commit -m "Your commit message"
+git push -u origin main
+```
+
+- `git add .` : Stages all changes
+- `git commit -m "Your commit message"` : Adds a description to your changes
+- `git push -u origin main` : Sends your changes to GitHub
+
+> Note: You need to have permission (e.g., be a collaborator) to push to the repository.
+>
+> After the first push with `git push -u origin main`, you can use just `git push` for subsequent pushes.
+
+#### Alternative: Manual Upload to S3
+
+If you want to upload your files to S3 manually (without GitHub Actions), you can use one of the following methods:
+
+**1. AWS Management Console (Web UI):**
+- Go to the [AWS S3 Console](https://s3.console.aws.amazon.com/s3/home).
+- Select your bucket (e.g., `ibrahimkilicaslan.click`).
+- Click the "Upload" button.
+- Add your files or folders and start the upload.
+
+**2. AWS CLI (Terminal):**
+- Make sure you have the AWS CLI installed and configured (`aws configure`).
+- To upload all files and folders in your current directory:
+  ```sh
+  aws s3 sync . s3://ibrahimkilicaslan.click --delete
+  ```
+- To upload a single file:
+  ```sh
+  aws s3 cp index.html s3://ibrahimkilicaslan.click/index.html
+  ```
+
+> Note: Manual uploads will not trigger CloudFront cache invalidation. If you use CloudFront and want changes to appear immediately, you may need to invalidate the cache manually:
+> ```sh
+> aws cloudfront create-invalidation --distribution-id <DISTRIBUTION_ID> --paths '/*'
+> ```
 
 ---
 
