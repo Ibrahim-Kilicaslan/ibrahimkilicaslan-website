@@ -401,39 +401,39 @@
         <section id="blogs">
             <h2>BLOGS</h2>
             <div class="blog-article">
-                <h3>How I Built and Deployed My Professional CV Website on AWS with Terraform & GitHub Actions</h3>
-                <p><strong>Author:</strong> Ibrahim Kilicaslan<br><strong>Date:</strong> 22.07.2025</p>
-                <h4>Introduction</h4>
-                <p>As a Cloud & DevOps Engineer, I wanted my personal website to reflect not only my professional experience but also my technical skills in automation, cloud infrastructure, and best practices. Instead of using a simple website builder, I decided to build and deploy my CV website using AWS services (S3, Route 53, CloudFront, ACM) and automate everything with Terraform and GitHub Actions.</p>
-                <p>In this post, I'll share my journey, the architecture, the challenges I faced, and a step-by-step guide for anyone who wants to build a modern, secure, and fully automated static website on AWS.</p>
-                <h4>Why Not Just Use a Website Builder?</h4>
+                <h3>Wie ich meine professionelle CV-Website mit AWS, Terraform & GitHub Actions erstellt und bereitgestellt habe</h3>
+                <p><strong>Autor:</strong> Ibrahim Kilicaslan<br><strong>Datum:</strong> 22.07.2025</p>
+                <h4>Einleitung</h4>
+                <p>Als Cloud & DevOps Engineer wollte ich, dass meine persönliche Website nicht nur meine berufliche Erfahrung, sondern auch meine technischen Fähigkeiten in Automatisierung, Cloud-Infrastruktur und bewährten Praktiken widerspiegelt. Anstatt einen einfachen Website-Builder zu verwenden, entschied ich mich, meine CV-Website mit AWS-Services (S3, Route 53, CloudFront, ACM) zu erstellen und alles mit Terraform und GitHub Actions zu automatisieren.</p>
+                <p>In diesem Beitrag teile ich meine Reise, die Architektur, die Herausforderungen, denen ich mich gestellt habe, und eine Schritt-für-Schritt-Anleitung für alle, die eine moderne, sichere und vollständig automatisierte statische Website auf AWS erstellen möchten.</p>
+                <h4>Warum nicht einfach einen Website-Builder verwenden?</h4>
                 <ul>
-                    <li><strong>Full control</strong> over infrastructure and deployment</li>
-                    <li><strong>Learning and showcasing</strong> real-world DevOps and cloud skills</li>
-                    <li><strong>Scalability and security</strong> with AWS best practices</li>
-                    <li><strong>Automation</strong>: No manual uploads, no FTP, no "click and pray" deployments</li>
+                    <li><strong>Vollständige Kontrolle</strong> über Infrastruktur und Bereitstellung</li>
+                    <li><strong>Lernen und Präsentieren</strong> realer DevOps- und Cloud-Fähigkeiten</li>
+                    <li><strong>Skalierbarkeit und Sicherheit</strong> mit AWS-Best-Practices</li>
+                    <li><strong>Automatisierung</strong>: Keine manuellen Uploads, kein FTP, keine "Klick-und-Hoffen"-Bereitstellungen</li>
                 </ul>
-                <h4>Architecture Overview</h4>
-                <p>The website is a static HTML/CSS/JS site, hosted on AWS S3, delivered globally via CloudFront, secured with HTTPS (ACM), and managed DNS with Route 53. All infrastructure is defined as code with Terraform, and deployments are automated with GitHub Actions.</p>
+                <h4>Architektur-Übersicht</h4>
+                <p>Die Website ist eine statische HTML/CSS/JS-Site, gehostet auf AWS S3, global über CloudFront ausgeliefert, mit HTTPS (ACM) gesichert und DNS mit Route 53 verwaltet. Die gesamte Infrastruktur ist mit Terraform als Code definiert, und Bereitstellungen werden mit GitHub Actions automatisiert.</p>
                 <ul>
-                    <li><strong>S3</strong>: Static website hosting</li>
-                    <li><strong>CloudFront</strong>: CDN, HTTPS, custom domains</li>
-                    <li><strong>Route 53</strong>: DNS management</li>
-                    <li><strong>ACM</strong>: Free SSL certificates (auto-renew)</li>
-                    <li><strong>GitHub Actions</strong>: CI/CD for automatic deployment</li>
+                    <li><strong>S3</strong>: Statisches Website-Hosting</li>
+                    <li><strong>CloudFront</strong>: CDN, HTTPS, benutzerdefinierte Domains</li>
+                    <li><strong>Route 53</strong>: DNS-Verwaltung</li>
+                    <li><strong>ACM</strong>: Kostenlose SSL-Zertifikate (automatische Verlängerung)</li>
+                    <li><strong>GitHub Actions</strong>: CI/CD für automatische Bereitstellung</li>
                 </ul>
-                <h4>Step-by-Step: How I Did It</h4>
+                <h4>Schritt für Schritt: Wie ich es gemacht habe</h4>
                 <ol>
-                    <li><strong>Design & Frontend:</strong> Built a modern, responsive CV website using HTML, CSS, and JavaScript.</li>
-                    <li><strong>Infrastructure as Code:</strong> Created a modular Terraform setup for S3, CloudFront, Route 53, and ACM.</li>
-                    <li><strong>CI/CD:</strong> Set up GitHub Actions for automated deployments.</li>
-                    <li><strong>Domain & DNS:</strong> Registered and managed my domain with Route 53.</li>
-                    <li><strong>SSL & Security:</strong> Used ACM for SSL certificates and enforced HTTPS.</li>
+                    <li><strong>Design & Frontend:</strong> Erstellung einer modernen, responsiven CV-Website mit HTML, CSS und JavaScript.</li>
+                    <li><strong>Infrastructure as Code:</strong> Erstellung eines modularen Terraform-Setups für S3, CloudFront, Route 53 und ACM.</li>
+                    <li><strong>CI/CD:</strong> Einrichtung von GitHub Actions für automatisierte Bereitstellungen.</li>
+                    <li><strong>Domain & DNS:</strong> Registrierung und Verwaltung meiner Domain mit Route 53.</li>
+                    <li><strong>SSL & Sicherheit:</strong> Verwendung von ACM für SSL-Zertifikate und Erzwingung von HTTPS.</li>
                 </ol>
-                <h4>Final Thoughts</h4>
-                <p>Building your own website with AWS and full automation is not just a great learning experience—it's also a way to stand out as a DevOps or Cloud Engineer.<br>
-                If you want a modern, secure, and fully automated personal site, feel free to use my repo as a template and make it your own!</p>
-                <p><strong>Happy building! 🚀<br>Ibrahim Kilicaslan</strong></p>
+                <h4>Abschließende Gedanken</h4>
+                <p>Der Aufbau einer eigenen Website mit AWS und vollständiger Automatisierung ist nicht nur eine großartige Lernerfahrung – es ist auch eine Möglichkeit, sich als DevOps- oder Cloud-Engineer hervorzuheben.<br>
+                Wenn Sie eine moderne, sichere und vollständig automatisierte persönliche Website möchten, nutzen Sie gerne mein Repository als Vorlage und machen Sie es zu Ihrem eigenen!</p>
+                <p><strong>Viel Erfolg beim Bauen! 🚀<br>Ibrahim Kilicaslan</strong></p>
             </div>
         </section>
 
