@@ -13,7 +13,8 @@ const translations = {
     hero: {
       title: "IBRAHIM KILICASLAN",
       subtitle: "Cloud & DevOps Engineer",
-      description: "As an electrical engineer with diverse professional experience, I bring a structured mindset and analytical skills. Through comprehensive training in DevOps and Cloud Computing in Germany, I have acquired solid knowledge in technologies like AWS, Docker, Kubernetes, Terraform, and Jenkins. My technical background combined with current cloud expertise enables me to efficiently shape modern IT infrastructures and support agile teams."
+      description: "As an electrical engineer with diverse professional experience, I bring a structured mindset and analytical skills. Through comprehensive training in DevOps and Cloud Computing in Germany, I have acquired solid knowledge in technologies like AWS, Docker, Kubernetes, Terraform, and Jenkins. My technical background combined with current cloud expertise enables me to efficiently shape modern IT infrastructures and support agile teams.",
+      projectsButton: "My Projects"
     },
     sections: {
       experience: "Professional Experience",
@@ -23,12 +24,137 @@ const translations = {
       blog: "Blog",
       contact: "Contact"
     },
+    sectionSubtitles: {
+      experience: "My career journey and professional development",
+      skills: "Technical skills and tools I work with",
+      projects: "Some of my recent work and achievements", 
+      education: "My educational background and certifications",
+      blog: "My thoughts and experiences from the tech world",
+      contact: "Let's talk about your next project"
+    },
+    experience: {
+      title: "Professional Experience",
+      subtitle: "My career journey and professional development",
+      devopsEngineer: {
+        title: "Cloud & DevOps Engineer",
+        company: "NioyaTech LLC - USA (Internship, Remote)",
+        period: "11/2024 - 01/2025",
+        description: "As a Cloud & DevOps Engineer, I specialize in designing, implementing, and managing cloud infrastructure solutions. I work with modern technologies to create scalable, secure, and efficient systems that support business growth and digital transformation.",
+        responsibilities: [
+          "Planning, implementation and automation of CI/CD pipelines",
+          "Provisioning and optimization of IT infrastructure"
+        ]
+      },
+      electricalEngineer: {
+        title: "Asset Manager",
+        company: "Huawei – Turkey",
+        period: "07/2016 – 07/2017",
+        description: "Worked as an electrical engineer with diverse professional experience, bringing structured thinking and analytical skills to complex technical projects.",
+        responsibilities: [
+          "Planning and coordinating orders and deliveries",
+          "Tracking and auditing company-owned assets",
+          "Tracking the reset of IT devices"
+        ]
+      },
+      educationConsultant: {
+        title: "Education Consultant & Coordinator",
+        company: "United Towers Educational Consulting – Turkey",
+        period: "11/2013 - 07/2016",
+        description: "Mediation of Work-and-Travel programs and coordination of educational and cultural exchange opportunities between Turkey and international students.",
+        responsibilities: [
+          "Mediation of Work-and-Travel programs",
+          "Coordination of educational and cultural exchange opportunities"
+        ]
+      }
+    },
+    skills: {
+      title: "Skills & Competencies",
+      subtitle: "Technical skills and tools I work with",
+      cloud: "Cloud (AWS) Services",
+      devops: "DevOps Tools & Technologies",
+      programming: "Programming & Scripting",
+      databases: "Databases",
+      monitoring: "Monitoring & Logging"
+    },
+    projects: {
+      title: "Projects",
+      subtitle: "Some of my recent work and achievements",
+      blogWebsite: {
+        title: "Professional CV Website",
+        description: "Modern, responsive CV website with AWS infrastructure, automated deployment with GitHub Actions, and multilingual support (EN/DE)."
+      },
+      petClinic: {
+        title: "Pet Clinic Application",
+        description: "Development and deployment of a blog web application on AWS Cloud Infrastructure with Django Framework. Load Balancing with ALB, Auto Scaling, RDS, S3, Lambda, DynamoDB, CloudFront and Route 53."
+      }
+    },
+    education: {
+      title: "Education",
+      subtitle: "My educational background and certifications",
+      clarusway: {
+        title: "AWS SAA & DevOps Engineer Training",
+        institution: "Clarusway IT Training School",
+        period: "October 2023 – October 2024",
+        description: "39-week professional training program (1480 hours total: IT Fundamentals, AWS SAA, DevOps). Solid experience with Shell Scripting, Git, Linux Environments, Network and AWS EC2, S3, VPC, Route53, IAM... Use of Ansible, Terraform and AWS CloudFormation for creating and managing Cloud resources. Containerization and virtualization projects with Docker, Docker Compose, Kubernetes, EKS and ECS. Experience in orchestration, scaling and networking of Kubernetes with EKS, ECS, Kubeadm and Rancher. Automated scaling and management of Kubernetes clusters with Helm, Terraform and Ansible. Implementation and automation of CI/CD pipelines with Jenkins, Cloud and GitHub integration. Use of monitoring tools like Prometheus, Grafana, AWS CloudWatch."
+      },
+      mba: {
+        title: "Master Of Business Administration (MBA)",
+        institution: "San Francisco Bay University",
+        period: "March 2008 – March 2009",
+        description: "MBA studies with focus on finance, which taught me strategic thinking and management skills."
+      },
+      bachelor: {
+        title: "Bachelor's Degree Electrical Engineer",
+        institution: "Kahramanmaras Sütcü Imam University",
+        period: "September 2003 – June 2007",
+        description: "Fundamental engineering studies, which taught me analytical thinking and technical problem-solving skills."
+      },
+      english: {
+        title: "English Language Stays",
+        institution: "De Anza College & Kaplan International",
+        period: "2009 – 2012",
+        description: "Intensive English language courses to improve communication skills in international work environments."
+      }
+    },
     blog: {
       title: "How I Created and Deployed My Professional CV Website with AWS, Terraform & GitHub Actions",
       author: "Author:",
       date: "Date:",
       readMore: "Read More",
-      readLess: "Show Less"
+      readLess: "Show Less",
+      excerpt: "As a Cloud & DevOps Engineer, I wanted my personal website to reflect not only my professional experience but also my technical skills in automation, cloud infrastructure, and best practices. Instead of using a simple website builder, I decided to create my CV website with AWS services (S3, Route 53, CloudFront, ACM) and automate everything with Terraform and GitHub Actions.",
+      excerpt2: "In this article, I share my journey, the architecture, the challenges I faced, and a step-by-step guide for everyone who wants to create a modern, secure, and fully automated static website on AWS.",
+      introduction: "As a Cloud & DevOps Engineer, I wanted my personal website to reflect not only my professional experience but also my technical skills in automation, cloud infrastructure, and best practices. Instead of using a simple website builder, I decided to create my CV website with AWS services (S3, Route 53, CloudFront, ACM) and automate everything with Terraform and GitHub Actions.",
+      introduction2: "In this article, I share my journey, the architecture, the challenges I faced, and a step-by-step guide for everyone who wants to create a modern, secure, and fully automated static website on AWS.",
+      whyNotBuilder: "Why not just use a website builder?",
+      whyNotBuilderList: [
+        "Complete control over infrastructure and deployment",
+        "Learning and presenting real DevOps and Cloud skills", 
+        "Scalability and security with AWS Best Practices",
+        "Automation: No manual uploads, no FTP, no 'click-and-hope' deployments"
+      ],
+      architecture: "Architecture Overview",
+      architectureDesc: "The website is a static HTML/CSS/JS site, hosted on AWS S3, delivered globally via CloudFront, secured with HTTPS (ACM), and DNS managed with Route 53. The entire infrastructure is defined as Code with Terraform, and deployments are automated with GitHub Actions.",
+      architectureList: [
+        "S3: Static website hosting",
+        "CloudFront: CDN, HTTPS, custom domains",
+        "Route 53: DNS management", 
+        "ACM: Free SSL certificates (automatic renewal)",
+        "GitHub Actions: CI/CD for automated deployment"
+      ],
+      stepByStep: "Step by Step: How I did it",
+      steps: [
+        "Design & Frontend: Creation of a modern, responsive CV website with HTML, CSS and JavaScript.",
+        "Infrastructure as Code: Creation of a modular Terraform setup for S3, CloudFront, Route 53 and ACM.",
+        "CI/CD: Setup of GitHub Actions for automated deployments.",
+        "Domain & DNS: Registration and management of the domain with Route 53.",
+        "SSL & Security: Use of ACM for SSL certificates and enforcement of HTTPS."
+      ],
+      conclusion: "Final Thoughts",
+      conclusion1: "Building your own website with AWS and full automation is not only a great learning experience – it's also a way to stand out as a DevOps or Cloud Engineer.",
+      conclusion2: "If you want a modern, secure and fully automated personal website, feel free to use my repository as a template and make it your own!",
+      technicalArch: "Technical Architecture",
+      successMessage: "Good luck building! 🚀"
     },
     contact: {
       title: "Contact",
@@ -60,7 +186,8 @@ const translations = {
     hero: {
       title: "IBRAHIM KILICASLAN",
       subtitle: "Cloud & DevOps Engineer", 
-      description: "Als Elektroingenieur mit vielseitiger Berufserfahrung bringe ich eine strukturierte Denkweise und analytische Fähigkeiten mit. Durch fundierte Kenntnisse in AWS, Docker, Kubernetes, Terraform und Jenkins unterstütze ich moderne IT-Infrastrukturen effizient."
+      description: "Als Elektroingenieur mit vielseitiger Berufserfahrung bringe ich eine strukturierte Denkweise und analytische Fähigkeiten mit. Durch fundierte Kenntnisse in AWS, Docker, Kubernetes, Terraform und Jenkins unterstütze ich moderne IT-Infrastrukturen effizient.",
+      projectsButton: "Meine Projekte"
     },
     sections: {
       experience: "Berufserfahrungen",
@@ -70,12 +197,137 @@ const translations = {
       blog: "Blog",
       contact: "Kontakt"
     },
+    sectionSubtitles: {
+      experience: "Meine berufliche Laufbahn und Expertise",
+      skills: "Meine technischen Fähigkeiten und Expertisen",
+      projects: "Meine wichtigsten technischen Projekte und Implementierungen",
+      education: "Meine Ausbildung und Weiterbildungen",
+      blog: "Meine Gedanken und Erfahrungen aus der Tech-Welt",
+      contact: "Lassen Sie uns über Ihr nächstes Projekt sprechen"
+    },
+    experience: {
+      title: "Berufserfahrungen",
+      subtitle: "Mein beruflicher Werdegang und meine Entwicklung",
+      devopsEngineer: {
+        title: "Cloud & DevOps Engineer",
+        company: "NioyaTech LLC - USA (Praktikum, Remote)",
+        period: "11/2024 - 01/2025",
+        description: "Als Cloud & DevOps Engineer spezialisiere ich mich auf die Gestaltung, Implementierung und Verwaltung von Cloud-Infrastrukturlösungen. Ich arbeite mit modernen Technologien, um skalierbare, sichere und effiziente Systeme zu schaffen, die das Geschäftswachstum und die digitale Transformation unterstützen.",
+        responsibilities: [
+          "Planung, Implementierung und Automatisierung von CI/CD-Pipelines",
+          "Bereitstellung und Optimierung der IT-Infrastruktur"
+        ]
+      },
+      electricalEngineer: {
+        title: "Asset Manager",
+        company: "Huawei – Türkei",
+        period: "07/2016 – 07/2017",
+        description: "Arbeitete als Elektroingenieur mit vielfältiger Berufserfahrung und brachte strukturiertes Denken und analytische Fähigkeiten in komplexe technische Projekte ein.",
+        responsibilities: [
+          "Planen und Koordinieren von Bestellungen und Lieferungen",
+          "Verfolgen und Auditieren von unternehmenseigenen Assets",
+          "Nachverfolgung der Rücksetzung von IT-Geräten"
+        ]
+      },
+      educationConsultant: {
+        title: "Bildungsberater & Koordinator",
+        company: "United Towers Educational Consulting – Türkei",
+        period: "11/2013 - 07/2016",
+        description: "Vermittlung von Work-and-Travel-Programmen und Koordination von Bildungs- und Kulturaustauschmöglichkeiten zwischen der Türkei und internationalen Studierenden.",
+        responsibilities: [
+          "Vermittlung von Work-and-Travel-Programmen",
+          "Koordination von Bildungs- und Kulturaustauschmöglichkeiten"
+        ]
+      }
+    },
+    skills: {
+      title: "Kompetenzen",
+      subtitle: "Technische Fähigkeiten und Tools, mit denen ich arbeite",
+      cloud: "Cloud (AWS) Services",
+      devops: "DevOps Tools & Technologies",
+      programming: "Programmierung & Scripting",
+      databases: "Datenbanken",
+      monitoring: "Monitoring & Logging"
+    },
+    projects: {
+      title: "Projekte",
+      subtitle: "Einige meiner aktuellen Arbeiten und Erfolge",
+      blogWebsite: {
+        title: "Professionelle CV-Website",
+        description: "Moderne, responsive CV-Website mit AWS-Infrastruktur, automatisierter Bereitstellung mit GitHub Actions und mehrsprachiger Unterstützung (EN/DE)."
+      },
+      petClinic: {
+        title: "Pet Clinic Anwendung",
+        description: "Entwicklung und Bereitstellung einer Blog-Webanwendung auf AWS Cloud Infrastructure mit Django Framework. Load Balancing mit ALB, Auto Scaling, RDS, S3, Lambda, DynamoDB, CloudFront und Route 53."
+      }
+    },
+    education: {
+      title: "Bildung",
+      subtitle: "Meine Ausbildung und Weiterbildungen",
+      clarusway: {
+        title: "AWS SAA & DevOps Engineer Weiterbildung",
+        institution: "Clarusway IT Training School",
+        period: "Oktober 2023 – Oktober 2024",
+        description: "39-wöchige berufliche Weiterbildung (insgesamt 1480 Stunden: IT Fundamentals, AWS SAA, DevOps). Fundierte Erfahrung mit Shell-Scripting, Git, Linux Environments, Network und AWS EC2, S3, VPC, Route53, IAM… Einsatz von Ansible, Terraform und AWS CloudFormation für das Anlegen und Verwalten von Cloud-Ressourcen. Containerisierungs- und Virtualisierungsprojekte mit Docker, Docker Compose, Kubernetes, EKS uns ECS. Erfahrung in der Orchestrierung, Skalierung und Vernetzung von Kubernetes mit EKS, ECS, Kubeadm und Rancher. Automatisierte Skalierung und Verwaltung von Kubernetes-Clustern mit Helm, Terraform und Ansible. Implementierung und Automatisierung von CI/CD-Pipelines mit Jenkins, Cloud und GitHub-Integration. Einsatz von Monitoring Tools wie Prometheus, Grafana, AWS CloudWatch."
+      },
+      mba: {
+        title: "Master Of Business Administration (MBA)",
+        institution: "San Francisco Bay University",
+        period: "März 2008 – März 2009",
+        description: "MBA-Studium mit Schwerpunkt Finanzen, das mir strategisches Denken und Managementfähigkeiten vermittelt hat."
+      },
+      bachelor: {
+        title: "Bachelor-Abschluss Elektroingenieur",
+        institution: "Kahramanmaras Sütcü Imam Universität",
+        period: "September 2003 – Juni 2007",
+        description: "Grundlegendes Ingenieursstudium, das mir analytisches Denken und technische Problemlösungsfähigkeiten vermittelt hat."
+      },
+      english: {
+        title: "Sprachaufenthalte Englisch",
+        institution: "De Anza College & Kaplan International",
+        period: "2009 – 2012",
+        description: "Intensive Englischsprachkurse zur Verbesserung der Kommunikationsfähigkeiten in internationalen Arbeitsumgebungen."
+      }
+    },
     blog: {
       title: "Wie ich meine professionelle CV-Website mit AWS, Terraform & GitHub Actions erstellt und bereitgestellt habe",
       author: "Autor:",
       date: "Datum:",
       readMore: "Weiterlesen",
-      readLess: "Weniger Anzeigen"
+      readLess: "Weniger Anzeigen",
+      excerpt: "Als Cloud & DevOps Engineer wollte ich, dass meine persönliche Website nicht nur meine berufliche Erfahrung, sondern auch meine technischen Fähigkeiten in Automatisierung, Cloud-Infrastruktur und bewährten Praktiken widerspiegelt. Anstatt einen einfachen Website-Builder zu verwenden, entschied ich mich, meine CV-Website mit AWS-Services (S3, Route 53, CloudFront, ACM) zu erstellen und alles mit Terraform und GitHub Actions zu automatisieren.",
+      excerpt2: "In diesem Beitrag teile ich meine Reise, die Architektur, die Herausforderungen, denen ich mich gestellt habe, und eine Schritt-für-Schritt-Anleitung für alle, die eine moderne, sichere und vollständig automatisierte statische Website auf AWS erstellen möchten.",
+      introduction: "Als Cloud & DevOps Engineer wollte ich, dass meine persönliche Website nicht nur meine berufliche Erfahrung, sondern auch meine technischen Fähigkeiten in Automatisierung, Cloud-Infrastruktur und bewährten Praktiken widerspiegelt. Anstatt einen einfachen Website-Builder zu verwenden, entschied ich mich, meine CV-Website mit AWS-Services (S3, Route 53, CloudFront, ACM) zu erstellen und alles mit Terraform und GitHub Actions zu automatisieren.",
+      introduction2: "In diesem Beitrag teile ich meine Reise, die Architektur, die Herausforderungen, denen ich mich gestellt habe, und eine Schritt-für-Schritt-Anleitung für alle, die eine moderne, sichere und vollständig automatisierte statische Website auf AWS erstellen möchten.",
+      whyNotBuilder: "Warum nicht einfach einen Website-Builder verwenden?",
+      whyNotBuilderList: [
+        "Vollständige Kontrolle über Infrastruktur und Bereitstellung",
+        "Lernen und Präsentieren realer DevOps- und Cloud-Fähigkeiten",
+        "Skalierbarkeit und Sicherheit mit AWS-Best-Practices",
+        "Automatisierung: Keine manuellen Uploads, kein FTP, keine \"Klick-und-Hoffen\"-Bereitstellungen"
+      ],
+      architecture: "Architektur-Übersicht",
+      architectureDesc: "Die Website ist eine statische HTML/CSS/JS-Site, gehostet auf AWS S3, global über CloudFront ausgeliefert, mit HTTPS (ACM) gesichert und DNS mit Route 53 verwaltet. Die gesamte Infrastruktur ist mit Terraform als Code definiert, und Bereitstellungen werden mit GitHub Actions automatisiert.",
+      architectureList: [
+        "S3: Statisches Website-Hosting",
+        "CloudFront: CDN, HTTPS, benutzerdefinierte Domains",
+        "Route 53: DNS-Verwaltung",
+        "ACM: Kostenlose SSL-Zertifikate (automatische Verlängerung)",
+        "GitHub Actions: CI/CD für automatische Bereitstellung"
+      ],
+      stepByStep: "Schritt für Schritt: Wie ich es gemacht habe",
+      steps: [
+        "Design & Frontend: Erstellung einer modernen, responsiven CV-Website mit HTML, CSS und JavaScript.",
+        "Infrastructure as Code: Erstellung eines modularen Terraform-Setups für S3, CloudFront, Route 53 und ACM.",
+        "CI/CD: Einrichtung von GitHub Actions für automatisierte Bereitstellungen.",
+        "Domain & DNS: Registrierung und Verwaltung meiner Domain mit Route 53.",
+        "SSL & Sicherheit: Verwendung von ACM für SSL-Zertifikate und Erzwingung von HTTPS."
+      ],
+      conclusion: "Abschließende Gedanken",
+      conclusion1: "Der Aufbau einer eigenen Website mit AWS und vollständiger Automatisierung ist nicht nur eine großartige Lernerfahrung – es ist auch eine Möglichkeit, sich als DevOps- oder Cloud-Engineer hervorzuheben.",
+      conclusion2: "Wenn Sie eine moderne, sichere und vollständig automatisierte persönliche Website möchten, nutzen Sie gerne mein Repository als Vorlage und machen Sie es zu Ihrem eigenen!",
+      technicalArch: "Technische Architektur",
+      successMessage: "Viel Erfolg beim Bauen! 🚀"
     },
     contact: {
       title: "Kontakt",
@@ -244,8 +496,20 @@ function updatePageContent() {
   // Update hero section
   updateHeroSection(t.hero);
   
-  // Update section titles
-  updateSectionTitles(t.sections);
+  // Update section titles and subtitles
+  updateSectionTitles(t.sections, t.sectionSubtitles);
+  
+  // Update experience section
+  updateExperienceSection(t.experience);
+  
+  // Update skills section
+  updateSkillsSection(t.skills);
+  
+  // Update projects section
+  updateProjectsSection(t.projects);
+  
+  // Update education section
+  updateEducationSection(t.education);
   
   // Update blog section
   updateBlogSection(t.blog);
@@ -272,13 +536,15 @@ function updateHeroSection(hero) {
   const title = document.querySelector('.hero h1');
   const subtitle = document.querySelector('.hero .subtitle');
   const description = document.querySelector('.hero p');
+  const projectsButton = document.querySelector('.hero .btn');
   
   if (title) title.textContent = hero.title;
   if (subtitle) subtitle.textContent = hero.subtitle;
   if (description) description.textContent = hero.description;
+  if (projectsButton) projectsButton.textContent = hero.projectsButton;
 }
 
-function updateSectionTitles(sections) {
+function updateSectionTitles(sections, sectionSubtitles) {
   const sectionTitles = document.querySelectorAll('.section-title');
   const sectionTexts = [sections.experience, sections.skills, sections.projects, sections.education, sections.blog, sections.contact];
   
@@ -287,18 +553,81 @@ function updateSectionTitles(sections) {
       title.textContent = sectionTexts[index];
     }
   });
+  
+  // Update section subtitles
+  const sectionSubtitleElements = document.querySelectorAll('.section-subtitle');
+  const subtitleTexts = [sectionSubtitles.experience, sectionSubtitles.skills, sectionSubtitles.projects, sectionSubtitles.education, sectionSubtitles.blog, sectionSubtitles.contact];
+  
+  sectionSubtitleElements.forEach((subtitle, index) => {
+    if (subtitleTexts[index]) {
+      subtitle.textContent = subtitleTexts[index];
+    }
+  });
 }
 
 function updateBlogSection(blog) {
   const blogTitle = document.querySelector('.blog-card h3');
   const authorLabel = document.querySelector('.blog-card .subtitle strong');
   const dateLabel = document.querySelector('.blog-card .subtitle');
+  const blogToggleButton = document.querySelector('.blog-toggle-btn .btn-text');
   
   if (blogTitle) blogTitle.textContent = blog.title;
   if (authorLabel) authorLabel.textContent = blog.author;
   if (dateLabel) {
-    const dateText = dateLabel.textContent;
     dateLabel.innerHTML = `<strong>${blog.author}</strong> Ibrahim Kilicaslan | <strong>${blog.date}</strong> 22.07.2025`;
+  }
+  if (blogToggleButton) {
+    blogToggleButton.textContent = blog.readMore;
+  }
+  
+  // Update blog excerpt
+  const blogExcerpt = document.querySelector('.blog-excerpt');
+  if (blogExcerpt) {
+    blogExcerpt.innerHTML = `
+      <p>${blog.excerpt}</p>
+      <p>${blog.excerpt2}</p>
+    `;
+  }
+  
+  // Update full blog content
+  const blogFullContent = document.querySelector('.blog-full-content');
+  if (blogFullContent) {
+    blogFullContent.innerHTML = `
+      <h4 style="color: var(--text-primary); margin: 2rem 0 1rem 0;">${blog.whyNotBuilder}</h4>
+      <ul style="margin: 1rem 0; padding-left: 2rem;">
+        ${blog.whyNotBuilderList.map(item => `<li><strong>${item}</strong></li>`).join('')}
+      </ul>
+      
+      <h4 style="color: var(--text-primary); margin: 2rem 0 1rem 0;">${blog.architecture}</h4>
+      <p>${blog.architectureDesc}</p>
+      
+      <ul style="margin: 1rem 0; padding-left: 2rem;">
+        ${blog.architectureList.map(item => `<li><strong>${item}</strong></li>`).join('')}
+      </ul>
+      
+      <h4 style="color: var(--text-primary); margin: 2rem 0 1rem 0;">${blog.stepByStep}</h4>
+      <ol style="margin: 1rem 0; padding-left: 2rem;">
+        ${blog.steps.map(step => `<li><strong>${step}</strong></li>`).join('')}
+      </ol>
+      
+      <h4 style="color: var(--text-primary); margin: 2rem 0 1rem 0;">${blog.conclusion}</h4>
+      <p>${blog.conclusion1}</p>
+      <p>${blog.conclusion2}</p>
+      
+      <h4 style="color: var(--text-primary); margin: 2rem 0 1rem 0;">${blog.technicalArch}</h4>
+      <div class="skills-list" style="margin: 1rem 0;">
+        <span class="skill-tag" style="background: #ff9900;">S3</span>
+        <span class="skill-tag" style="background: #232f3e;">CloudFront</span>
+        <span class="skill-tag" style="background: #ff9900;">Route 53</span>
+        <span class="skill-tag" style="background: #ff9900;">ACM</span>
+        <span class="skill-tag" style="background: #7c3aed;">Terraform</span>
+        <span class="skill-tag" style="background: #2088ff;">GitHub Actions</span>
+      </div>
+      
+      <p style="margin-top: 1.5rem; font-size: 1.1rem; font-weight: 600;">
+        <strong>${blog.successMessage}<br>Ibrahim Kilicaslan</strong>
+      </p>
+    `;
   }
 }
 
@@ -308,10 +637,20 @@ function updateContactSection(contact) {
   const contactLabels = document.querySelectorAll('.contact-item h4');
   const formTitle = document.querySelector('.contact-form-container h3');
   const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
+  const sendButton = document.querySelector('.contact-form button');
   
   if (contactTitle) contactTitle.textContent = contact.title;
   if (contactSubtitle) contactSubtitle.textContent = contact.subtitle;
   if (formTitle) formTitle.textContent = contact.sendMessage;
+  if (sendButton) {
+    // Update send button text (keep icon if exists)
+    const icon = sendButton.querySelector('i');
+    if (icon) {
+      sendButton.innerHTML = `<i class="${icon.className}"></i> ${contact.send}`;
+    } else {
+      sendButton.textContent = contact.send;
+    }
+  }
   
   // Update contact item labels
   const contactLabelTexts = [contact.phone, contact.email, contact.location, 'LinkedIn', 'GitHub'];
@@ -334,6 +673,179 @@ function updateFooter(footer) {
   const footerText = document.querySelector('footer p');
   if (footerText) {
     footerText.innerHTML = `© 2025 ibrahimkilicaslan.click ${footer.rights}`;
+  }
+}
+
+function updateExperienceSection(experience) {
+  // Update experience section subtitle
+  const experienceSubtitle = document.querySelector('#experience .section-subtitle');
+  if (experienceSubtitle) {
+    experienceSubtitle.textContent = experience.subtitle;
+  }
+  
+  // Update experience cards content
+  const experienceCards = document.querySelectorAll('#experience .card');
+  if (experienceCards.length >= 3) {
+    // First card - DevOps Engineer
+    const firstCard = experienceCards[0];
+    const firstTitle = firstCard.querySelector('h3');
+    const firstCompany = firstCard.querySelector('.subtitle');
+    const firstDescription = firstCard.querySelector('p');
+    const firstList = firstCard.querySelector('ul');
+    
+    if (firstTitle) firstTitle.textContent = experience.devopsEngineer.title;
+    if (firstCompany) firstCompany.innerHTML = `<strong>${experience.devopsEngineer.company}</strong> | ${experience.devopsEngineer.period}`;
+    if (firstDescription) firstDescription.textContent = experience.devopsEngineer.description;
+    
+    // Update list items
+    if (firstList && experience.devopsEngineer.responsibilities) {
+      const listItems = firstList.querySelectorAll('li');
+      experience.devopsEngineer.responsibilities.forEach((responsibility, index) => {
+        if (listItems[index]) {
+          listItems[index].textContent = responsibility;
+        }
+      });
+    }
+    
+    // Second card - Asset Manager
+    const secondCard = experienceCards[1];
+    const secondTitle = secondCard.querySelector('h3');
+    const secondCompany = secondCard.querySelector('.subtitle');
+    const secondDescription = secondCard.querySelector('p');
+    const secondList = secondCard.querySelector('ul');
+    
+    if (secondTitle) secondTitle.textContent = experience.electricalEngineer.title;
+    if (secondCompany) secondCompany.innerHTML = `<strong>${experience.electricalEngineer.company}</strong> | ${experience.electricalEngineer.period}`;
+    if (secondDescription) secondDescription.textContent = experience.electricalEngineer.description;
+    
+    // Update list items
+    if (secondList && experience.electricalEngineer.responsibilities) {
+      const listItems = secondList.querySelectorAll('li');
+      experience.electricalEngineer.responsibilities.forEach((responsibility, index) => {
+        if (listItems[index]) {
+          listItems[index].textContent = responsibility;
+        }
+      });
+    }
+    
+    // Third card - Education Consultant
+    const thirdCard = experienceCards[2];
+    const thirdTitle = thirdCard.querySelector('h3');
+    const thirdCompany = thirdCard.querySelector('.subtitle');
+    const thirdDescription = thirdCard.querySelector('p');
+    const thirdList = thirdCard.querySelector('ul');
+    
+    if (thirdTitle) thirdTitle.textContent = experience.educationConsultant.title;
+    if (thirdCompany) thirdCompany.innerHTML = `<strong>${experience.educationConsultant.company}</strong> | ${experience.educationConsultant.period}`;
+    if (thirdDescription) thirdDescription.textContent = experience.educationConsultant.description;
+    
+    // Update list items
+    if (thirdList && experience.educationConsultant.responsibilities) {
+      const listItems = thirdList.querySelectorAll('li');
+      experience.educationConsultant.responsibilities.forEach((responsibility, index) => {
+        if (listItems[index]) {
+          listItems[index].textContent = responsibility;
+        }
+      });
+    }
+  }
+}
+
+function updateSkillsSection(skills) {
+  // Update skills section subtitle
+  const skillsSubtitle = document.querySelector('#skills .section-subtitle');
+  if (skillsSubtitle) {
+    skillsSubtitle.textContent = skills.subtitle;
+  }
+  
+  // Update skill category labels
+  const skillLabels = document.querySelectorAll('#skills .skills-grid h4');
+  const skillLabelTexts = [skills.cloud, skills.devops, skills.programming, skills.databases, skills.monitoring];
+  
+  skillLabels.forEach((label, index) => {
+    if (skillLabelTexts[index]) {
+      label.textContent = skillLabelTexts[index];
+    }
+  });
+}
+
+function updateProjectsSection(projects) {
+  // Update projects section subtitle
+  const projectsSubtitle = document.querySelector('#projects .section-subtitle');
+  if (projectsSubtitle) {
+    projectsSubtitle.textContent = projects.subtitle;
+  }
+  
+  // Update project cards
+  const projectCards = document.querySelectorAll('#projects .card');
+  if (projectCards.length >= 2) {
+    // First project - Blog Website
+    const firstCard = projectCards[0];
+    const firstTitle = firstCard.querySelector('h3');
+    const firstDescription = firstCard.querySelector('p');
+    
+    if (firstTitle) firstTitle.textContent = projects.blogWebsite.title;
+    if (firstDescription) firstDescription.textContent = projects.blogWebsite.description;
+    
+    // Second project - Pet Clinic
+    const secondCard = projectCards[1];
+    const secondTitle = secondCard.querySelector('h3');
+    const secondDescription = secondCard.querySelector('p');
+    
+    if (secondTitle) secondTitle.textContent = projects.petClinic.title;
+    if (secondDescription) secondDescription.textContent = projects.petClinic.description;
+  }
+}
+
+function updateEducationSection(education) {
+  // Update education section subtitle
+  const educationSubtitle = document.querySelector('#education .section-subtitle');
+  if (educationSubtitle) {
+    educationSubtitle.textContent = education.subtitle;
+  }
+  
+  // Update all education cards
+  const educationCards = document.querySelectorAll('#education .card');
+  if (educationCards.length >= 4) {
+    // First card - Clarusway
+    const firstCard = educationCards[0];
+    const firstTitle = firstCard.querySelector('h3');
+    const firstSubtitle = firstCard.querySelector('.subtitle');
+    const firstDescription = firstCard.querySelector('p');
+    
+    if (firstTitle) firstTitle.textContent = education.clarusway.title;
+    if (firstSubtitle) firstSubtitle.textContent = `${education.clarusway.institution} | ${education.clarusway.period}`;
+    if (firstDescription) firstDescription.textContent = education.clarusway.description;
+    
+    // Second card - MBA
+    const secondCard = educationCards[1];
+    const secondTitle = secondCard.querySelector('h3');
+    const secondSubtitle = secondCard.querySelector('.subtitle');
+    const secondDescription = secondCard.querySelector('p');
+    
+    if (secondTitle) secondTitle.textContent = education.mba.title;
+    if (secondSubtitle) secondSubtitle.textContent = `${education.mba.institution} | ${education.mba.period}`;
+    if (secondDescription) secondDescription.textContent = education.mba.description;
+    
+    // Third card - Bachelor
+    const thirdCard = educationCards[2];
+    const thirdTitle = thirdCard.querySelector('h3');
+    const thirdSubtitle = thirdCard.querySelector('.subtitle');
+    const thirdDescription = thirdCard.querySelector('p');
+    
+    if (thirdTitle) thirdTitle.textContent = education.bachelor.title;
+    if (thirdSubtitle) thirdSubtitle.textContent = `${education.bachelor.institution} | ${education.bachelor.period}`;
+    if (thirdDescription) thirdDescription.textContent = education.bachelor.description;
+    
+    // Fourth card - English Language
+    const fourthCard = educationCards[3];
+    const fourthTitle = fourthCard.querySelector('h3');
+    const fourthSubtitle = fourthCard.querySelector('.subtitle');
+    const fourthDescription = fourthCard.querySelector('p');
+    
+    if (fourthTitle) fourthTitle.textContent = education.english.title;
+    if (fourthSubtitle) fourthSubtitle.textContent = `${education.english.institution} | ${education.english.period}`;
+    if (fourthDescription) fourthDescription.textContent = education.english.description;
   }
 }
 
