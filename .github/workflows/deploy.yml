@@ -14,61 +14,94 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
 
-      - name: Create deployment directory
-        run: |
-          mkdir -p deploy-temp
-          cp index.html deploy-temp/
-          cp error.html deploy-temp/
-          cp -r css deploy-temp/
-          cp -r js deploy-temp/
-          cp -r assets deploy-temp/
-          cp -r src deploy-temp/
+    - name: Create deployment directory
+      run: |
+        mkdir -p deploy-temp
+        cp index.html deploy-temp/
+        cp error.html deploy-temp/
+        cp -r css deploy-temp/
+        cp -r js deploy-temp/
+        cp -r assets deploy-temp/
+        cp -r src deploy-temp/
 
-      - name: Sync website files to S3
-        run: |
-          aws s3 sync deploy-temp/ s3://ibrahimkilicaslan.click \
-            --delete \
-            --exclude '*.tf' \
-            --exclude '.terraform/*' \
-            --exclude '*.tfstate*' \
-            --exclude '.git/*' \
-            --exclude '.github/*' \
-            --exclude 'README.md' \
-            --exclude '.gitignore'
+    - name: Sync website files to S3 with cache control
+      run: |
+        # Upload HTML files with no cache
+        aws s3 sync deploy-temp/ s3://ibrahimkilicaslan.click \
+          --exclude "*" \
+          --include "*.html" \
+          --cache-control "no-cache, no-store, must-revalidate" \
+          --metadata-directive REPLACE
+        
+        # Upload CSS/JS with short cache
+        aws s3 sync deploy-temp/ s3://ibrahimkilicaslan.click \
+          --exclude "*" \
+          --include "*.css" \
+          --include "*.js" \
+          --cache-control "max-age=300" \
+          --metadata-directive REPLACE
+        
+        # Upload other assets with longer cache
+        aws s3 sync deploy-temp/ s3://ibrahimkilicaslan.click \
+          --exclude "*.html" \
+          --exclude "*.css" \
+          --exclude "*.js" \
+          --cache-control "max-age=3600" \
+          --metadata-directive REPLACE \
+          --delete
 
-      - name: Invalidate CloudFront cache
-        run: |
-          echo "🔄 Invalidating CloudFront cache..."
-          INVALIDATION_ID=$(aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
-            --paths '/*' \
-            --query 'Invalidation.Id' \
-            --output text)
-          echo "✅ Invalidation created: $INVALIDATION_ID"
-          
-          # Wait for invalidation to complete
-          echo "⏳ Waiting for cache invalidation to complete..."
-          aws cloudfront wait invalidation-completed \
-            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
-            --id $INVALIDATION_ID
-          echo "🎉 Cache invalidation completed successfully!"
+    - name: Invalidate CloudFront cache (Multiple paths)
+      run: |
+        echo "🔄 Invalidating CloudFront cache..."
+        
+        # Create invalidation for all critical paths
+        INVALIDATION_ID=$(aws cloudfront create-invalidation \
+          --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+          --paths '/*' '/index.html' '/' '/css/*' '/js/*' '/assets/*' '/src/*' \
+          --query 'Invalidation.Id' \
+          --output text)
+        
+        echo "✅ Invalidation created: $INVALIDATION_ID"
+        echo "⏳ Waiting for cache invalidation to complete..."
+        
+        # Wait for invalidation with timeout
+        timeout 900 aws cloudfront wait invalidation-completed \
+          --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+          --id $INVALIDATION_ID
+        
+        echo "🎉 Cache invalidation completed successfully!"
 
-      - name: Cleanup deployment directory
-        run: rm -rf deploy-temp
+    - name: Verify CloudFront cache headers
+      run: |
+        echo "🔍 Testing cache headers..."
+        curl -I "https://ibrahimkilicaslan.click/" || echo "Site might still be propagating..."
 
-      - name: Deployment status
-        run: |
-          echo "✅ Website deployed successfully!"
-          echo "🌐 Main site: https://ibrahimkilicaslan.click"
-          echo "🌐 WWW site: https://www.ibrahimkilicaslan.click"
-          echo "🌐 Info site: https://info.ibrahimkilicaslan.click" 
+    - name: Cleanup deployment directory
+      run: rm -rf deploy-temp
+
+    - name: Deployment status
+      run: |
+        echo "✅ Website deployed successfully!"
+        echo "🌐 Main site: https://ibrahimkilicaslan.click"
+        echo "🌐 WWW site: https://www.ibrahimkilicaslan.click"
+        echo "🌐 Info site: https://info.ibrahimkilicaslan.click"
+        echo ""
+        echo "⚡ Cache Optimization Applied:"
+        echo "   - HTML files: No cache (immediate updates)"
+        echo "   - CSS/JS files: 5 minute cache"
+        echo "   - Assets: 1 hour cache"
+        echo ""
+        echo "🧹 Browser Cache Busting Tips:"
+        echo "   - Force refresh: Ctrl+F5 (Windows) / Cmd+Shift+R (Mac)"
+        echo "   - Or open in incognito/private mode"
+        echo "   - Changes should be visible in 2-3 minutes max!"
