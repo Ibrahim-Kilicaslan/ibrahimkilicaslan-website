@@ -980,6 +980,29 @@ body.dark-mode .navbar {
     border-bottom-color: var(--border-color);
 }
 
+body.dark-mode .nav-item a {
+    color: #e2e8f0;
+}
+
+body.dark-mode .nav-item a:hover,
+body.dark-mode .nav-item a.active {
+    background: var(--primary-gradient);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+body.dark-mode .nav-menu {
+    background: rgba(26, 32, 44, 0.98);
+}
+
+@media (max-width: 768px) {
+    body.dark-mode .nav-menu {
+        background: rgba(26, 32, 44, 0.98);
+        border-top-color: var(--border-color);
+    }
+}
+
 body.dark-mode .card {
     background: var(--bg-secondary);
     border-color: var(--border-color);
