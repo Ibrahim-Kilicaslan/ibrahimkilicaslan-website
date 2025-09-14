@@ -48,9 +48,20 @@ jobs:
 
       - name: Invalidate CloudFront cache
         run: |
-          aws cloudfront create-invalidation \
+          echo "🔄 Invalidating CloudFront cache..."
+          INVALIDATION_ID=$(aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
-            --paths '/*'
+            --paths '/*' \
+            --query 'Invalidation.Id' \
+            --output text)
+          echo "✅ Invalidation created: $INVALIDATION_ID"
+          
+          # Wait for invalidation to complete
+          echo "⏳ Waiting for cache invalidation to complete..."
+          aws cloudfront wait invalidation-completed \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --id $INVALIDATION_ID
+          echo "🎉 Cache invalidation completed successfully!"
 
       - name: Cleanup deployment directory
         run: rm -rf deploy-temp
