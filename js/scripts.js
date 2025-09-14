@@ -1,3 +1,104 @@
+// Language system
+const translations = {
+  en: {
+    nav: {
+      home: "Home",
+      experience: "Experience", 
+      skills: "Skills",
+      projects: "Projects",
+      education: "Education",
+      blog: "Blog",
+      contact: "Contact"
+    },
+    hero: {
+      title: "IBRAHIM KILICASLAN",
+      subtitle: "Cloud & DevOps Engineer",
+      description: "As an electrical engineer with diverse professional experience, I bring a structured mindset and analytical skills. Through comprehensive training in DevOps and Cloud Computing in Germany, I have acquired solid knowledge in technologies like AWS, Docker, Kubernetes, Terraform, and Jenkins. My technical background combined with current cloud expertise enables me to efficiently shape modern IT infrastructures and support agile teams."
+    },
+    sections: {
+      experience: "Professional Experience",
+      skills: "Skills & Competencies", 
+      projects: "Projects",
+      education: "Education",
+      blog: "Blog",
+      contact: "Contact"
+    },
+    blog: {
+      title: "How I Created and Deployed My Professional CV Website with AWS, Terraform & GitHub Actions",
+      author: "Author:",
+      date: "Date:",
+      readMore: "Read More",
+      readLess: "Show Less"
+    },
+    contact: {
+      title: "Contact",
+      subtitle: "Let's talk about your next project",
+      phone: "Phone",
+      email: "E-Mail", 
+      location: "Location",
+      sendMessage: "Send Message",
+      firstName: "First Name",
+      lastName: "Last Name",
+      subject: "Subject",
+      message: "Your Message",
+      send: "Send Message"
+    },
+    footer: {
+      rights: "All rights reserved"
+    }
+  },
+  de: {
+    nav: {
+      home: "Home",
+      experience: "Erfahrung",
+      skills: "Kompetenzen", 
+      projects: "Projekte",
+      education: "Bildung",
+      blog: "Blog",
+      contact: "Kontakt"
+    },
+    hero: {
+      title: "IBRAHIM KILICASLAN",
+      subtitle: "Cloud & DevOps Engineer", 
+      description: "Als Elektroingenieur mit vielseitiger Berufserfahrung bringe ich eine strukturierte Denkweise und analytische Fähigkeiten mit. Durch fundierte Kenntnisse in AWS, Docker, Kubernetes, Terraform und Jenkins unterstütze ich moderne IT-Infrastrukturen effizient."
+    },
+    sections: {
+      experience: "Berufserfahrungen",
+      skills: "Kompetenzen",
+      projects: "Projekte", 
+      education: "Bildung",
+      blog: "Blog",
+      contact: "Kontakt"
+    },
+    blog: {
+      title: "Wie ich meine professionelle CV-Website mit AWS, Terraform & GitHub Actions erstellt und bereitgestellt habe",
+      author: "Autor:",
+      date: "Datum:",
+      readMore: "Weiterlesen",
+      readLess: "Weniger Anzeigen"
+    },
+    contact: {
+      title: "Kontakt",
+      subtitle: "Lassen Sie uns über Ihr nächstes Projekt sprechen",
+      phone: "Telefon",
+      email: "E-Mail",
+      location: "Standort", 
+      sendMessage: "Nachricht senden",
+      firstName: "Vorname",
+      lastName: "Nachname",
+      subject: "Betreff",
+      message: "Ihre Nachricht",
+      send: "Nachricht senden"
+    },
+    footer: {
+      rights: "Alle Rechte vorbehalten"
+    }
+  }
+};
+
+// Current language state
+let currentLanguage = localStorage.getItem('language') || 'de';
+
 // Navigation functionality
 document.addEventListener('DOMContentLoaded', function() {
   const navbar = document.querySelector('.navbar');
@@ -102,7 +203,139 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Initialize animations
   initializeAnimations();
+  
+  // Initialize language system
+  initializeLanguage();
 });
+
+// Language switching functionality
+function initializeLanguage() {
+  updateLanguageButton();
+  updatePageContent();
+}
+
+function toggleLanguage() {
+  currentLanguage = currentLanguage === 'de' ? 'en' : 'de';
+  localStorage.setItem('language', currentLanguage);
+  updateLanguageButton();
+  updatePageContent();
+}
+
+function updateLanguageButton() {
+  const langToggle = document.getElementById('lang-toggle');
+  const langFlag = langToggle.querySelector('.lang-flag');
+  const langCode = langToggle.querySelector('.lang-code');
+  
+  if (currentLanguage === 'de') {
+    langFlag.textContent = '🇩🇪';
+    langCode.textContent = 'DE';
+  } else {
+    langFlag.textContent = '🇬🇧';
+    langCode.textContent = 'EN';
+  }
+}
+
+function updatePageContent() {
+  const t = translations[currentLanguage];
+  
+  // Update navigation
+  updateNavigation(t.nav);
+  
+  // Update hero section
+  updateHeroSection(t.hero);
+  
+  // Update section titles
+  updateSectionTitles(t.sections);
+  
+  // Update blog section
+  updateBlogSection(t.blog);
+  
+  // Update contact section
+  updateContactSection(t.contact);
+  
+  // Update footer
+  updateFooter(t.footer);
+}
+
+function updateNavigation(nav) {
+  const navLinks = document.querySelectorAll('.nav-link');
+  const navTexts = [nav.home, nav.experience, nav.skills, nav.projects, nav.education, nav.blog, nav.contact];
+  
+  navLinks.forEach((link, index) => {
+    if (navTexts[index]) {
+      link.textContent = navTexts[index];
+    }
+  });
+}
+
+function updateHeroSection(hero) {
+  const title = document.querySelector('.hero h1');
+  const subtitle = document.querySelector('.hero .subtitle');
+  const description = document.querySelector('.hero p');
+  
+  if (title) title.textContent = hero.title;
+  if (subtitle) subtitle.textContent = hero.subtitle;
+  if (description) description.textContent = hero.description;
+}
+
+function updateSectionTitles(sections) {
+  const sectionTitles = document.querySelectorAll('.section-title');
+  const sectionTexts = [sections.experience, sections.skills, sections.projects, sections.education, sections.blog, sections.contact];
+  
+  sectionTitles.forEach((title, index) => {
+    if (sectionTexts[index]) {
+      title.textContent = sectionTexts[index];
+    }
+  });
+}
+
+function updateBlogSection(blog) {
+  const blogTitle = document.querySelector('.blog-card h3');
+  const authorLabel = document.querySelector('.blog-card .subtitle strong');
+  const dateLabel = document.querySelector('.blog-card .subtitle');
+  
+  if (blogTitle) blogTitle.textContent = blog.title;
+  if (authorLabel) authorLabel.textContent = blog.author;
+  if (dateLabel) {
+    const dateText = dateLabel.textContent;
+    dateLabel.innerHTML = `<strong>${blog.author}</strong> Ibrahim Kilicaslan | <strong>${blog.date}</strong> 22.07.2025`;
+  }
+}
+
+function updateContactSection(contact) {
+  const contactTitle = document.querySelector('#contact .section-title');
+  const contactSubtitle = document.querySelector('#contact .section-subtitle');
+  const contactLabels = document.querySelectorAll('.contact-item h4');
+  const formTitle = document.querySelector('.contact-form-container h3');
+  const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
+  
+  if (contactTitle) contactTitle.textContent = contact.title;
+  if (contactSubtitle) contactSubtitle.textContent = contact.subtitle;
+  if (formTitle) formTitle.textContent = contact.sendMessage;
+  
+  // Update contact item labels
+  const contactLabelTexts = [contact.phone, contact.email, contact.location, 'LinkedIn', 'GitHub'];
+  contactLabels.forEach((label, index) => {
+    if (contactLabelTexts[index]) {
+      label.textContent = contactLabelTexts[index];
+    }
+  });
+  
+  // Update form placeholders
+  const placeholderTexts = [contact.firstName, contact.lastName, contact.email, contact.subject, contact.message];
+  formInputs.forEach((input, index) => {
+    if (placeholderTexts[index]) {
+      input.placeholder = placeholderTexts[index];
+    }
+  });
+}
+
+function updateFooter(footer) {
+  const footerText = document.querySelector('footer p');
+  if (footerText) {
+    footerText.innerHTML = `© 2025 ibrahimkilicaslan.click ${footer.rights}`;
+  }
+}
 
 // Mobile menu toggle
 function toggleMobileMenu() {
@@ -127,7 +360,7 @@ function toggleBlogContent(button) {
     fullContent.style.display = 'block';
     excerpt.style.display = 'none';
     button.classList.add('expanded');
-    btnText.textContent = 'Weniger Anzeigen';
+    btnText.textContent = translations[currentLanguage].blog.readLess;
     
     // Smooth scroll to button after content loads
     setTimeout(() => {
@@ -141,7 +374,7 @@ function toggleBlogContent(button) {
     fullContent.style.display = 'none';
     excerpt.style.display = 'block';
     button.classList.remove('expanded');
-    btnText.textContent = 'Weiterlesen';
+    btnText.textContent = translations[currentLanguage].blog.readMore;
     
     // Smooth scroll to top of blog card
     blogCard.scrollIntoView({ 
