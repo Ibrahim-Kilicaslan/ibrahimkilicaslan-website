@@ -169,8 +169,8 @@ body {
 
 .floating-icon {
     position: absolute;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 2.2rem;
     animation: floatingRotate 20s linear infinite;
 }
 
@@ -216,6 +216,69 @@ body {
     font-size: 1.8rem;
 }
 
+.floating-icon:nth-child(7) {
+    top: 45%;
+    left: 15%;
+    animation-delay: -18s;
+    font-size: 2rem;
+}
+
+.floating-icon:nth-child(8) {
+    top: 25%;
+    right: 20%;
+    animation-delay: -21s;
+    font-size: 1.8rem;
+}
+
+.floating-icon:nth-child(9) {
+    top: 65%;
+    right: 10%;
+    animation-delay: -24s;
+    font-size: 2.2rem;
+}
+
+.floating-icon:nth-child(10) {
+    top: 35%;
+    left: 25%;
+    animation-delay: -27s;
+    font-size: 2rem;
+}
+
+.floating-icon:nth-child(11) {
+    top: 75%;
+    left: 10%;
+    animation-delay: -30s;
+    font-size: 1.8rem;
+}
+
+.floating-icon:nth-child(12) {
+    top: 50%;
+    right: 35%;
+    animation-delay: -33s;
+    font-size: 2.1rem;
+}
+
+.floating-icon:nth-child(13) {
+    top: 15%;
+    left: 35%;
+    animation-delay: -36s;
+    font-size: 1.9rem;
+}
+
+.floating-icon:nth-child(14) {
+    top: 55%;
+    right: 5%;
+    animation-delay: -39s;
+    font-size: 2rem;
+}
+
+.floating-icon:nth-child(15) {
+    top: 80%;
+    left: 30%;
+    animation-delay: -42s;
+    font-size: 1.7rem;
+}
+
 /* Code Particles */
 .code-particles {
     position: absolute;
@@ -225,9 +288,9 @@ body {
 
 .code-particle {
     position: absolute;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.3);
     font-family: 'Courier New', monospace;
-    font-size: 1rem;
+    font-size: 0.9rem;
     animation: codeFloat 15s linear infinite;
 }
 
@@ -249,6 +312,60 @@ body {
     animation-delay: -10s;
 }
 
+.code-particle:nth-child(4) {
+    top: 35%;
+    left: 85%;
+    animation-delay: -15s;
+}
+
+.code-particle:nth-child(5) {
+    top: 55%;
+    left: 88%;
+    animation-delay: -20s;
+}
+
+.code-particle:nth-child(6) {
+    top: 75%;
+    left: 92%;
+    animation-delay: -25s;
+}
+
+.code-particle:nth-child(7) {
+    top: 15%;
+    left: 87%;
+    animation-delay: -30s;
+}
+
+.code-particle:nth-child(8) {
+    top: 45%;
+    left: 89%;
+    animation-delay: -35s;
+}
+
+.code-particle:nth-child(9) {
+    top: 85%;
+    left: 91%;
+    animation-delay: -40s;
+}
+
+.code-particle:nth-child(10) {
+    top: 25%;
+    left: 86%;
+    animation-delay: -45s;
+}
+
+.code-particle:nth-child(11) {
+    top: 95%;
+    left: 93%;
+    animation-delay: -50s;
+}
+
+.code-particle:nth-child(12) {
+    top: 5%;
+    left: 84%;
+    animation-delay: -55s;
+}
+
 /* Geometric Shapes */
 .geometric-bg {
     position: absolute;
@@ -258,7 +375,7 @@ body {
 
 .geo-shape {
     position: absolute;
-    border: 3px solid rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.25);
     animation: geoRotate 25s linear infinite;
 }
 
@@ -933,23 +1050,23 @@ body.dark-mode .contact-item {
 @keyframes floatingRotate {
     0% { 
         transform: translateY(0px) rotate(0deg); 
-        opacity: 0.4;
+        opacity: 0.25;
     }
     25% { 
         transform: translateY(-20px) rotate(90deg); 
-        opacity: 0.6;
+        opacity: 0.4;
     }
     50% { 
         transform: translateY(0px) rotate(180deg); 
-        opacity: 0.4;
+        opacity: 0.25;
     }
     75% { 
         transform: translateY(-15px) rotate(270deg); 
-        opacity: 0.7;
+        opacity: 0.45;
     }
     100% { 
         transform: translateY(0px) rotate(360deg); 
-        opacity: 0.4;
+        opacity: 0.25;
     }
 }
 
@@ -959,10 +1076,10 @@ body.dark-mode .contact-item {
         opacity: 0;
     }
     10% {
-        opacity: 0.6;
+        opacity: 0.35;
     }
     90% {
-        opacity: 0.6;
+        opacity: 0.35;
     }
     100% { 
         transform: translateX(-50px) translateY(-100px);
@@ -973,15 +1090,15 @@ body.dark-mode .contact-item {
 @keyframes geoRotate {
     0% { 
         transform: rotate(0deg) scale(1);
-        opacity: 0.4;
+        opacity: 0.25;
     }
     50% { 
         transform: rotate(180deg) scale(1.1);
-        opacity: 0.6;
+        opacity: 0.35;
     }
     100% { 
         transform: rotate(360deg) scale(1);
-        opacity: 0.4;
+        opacity: 0.25;
     }
 }
 
