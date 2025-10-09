@@ -377,17 +377,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Smooth scrolling for navigation links
   navLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
           const targetSection = document.querySelector(targetId);
           if (targetSection) {
               const offsetTop = targetSection.offsetTop - 80;
               window.scrollTo({
                   top: offsetTop,
-                  behavior: 'smooth'
-              });
-          }
+                    behavior: 'smooth'
+                });
+            }
           // Close mobile menu if open
           document.querySelector('.nav-menu').classList.remove('active');
           document.querySelector('.mobile-menu-toggle').classList.remove('active');
@@ -416,9 +416,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Contact form
   const contactForm = document.querySelector('.contact-form');
-  if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-          e.preventDefault();
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
           
           // Form validation
           const formFields = this.querySelectorAll('input, textarea');
@@ -1113,6 +1113,21 @@ const optimizedScrollHandler = throttle(() => {
 }, 16);
 
 window.addEventListener('scroll', optimizedScrollHandler);
+
+// Toggle project details
+function toggleProjectDetails(event, detailsId) {
+  event.preventDefault();
+  const detailsElement = document.getElementById(detailsId);
+  const link = event.target;
+  
+  if (detailsElement.style.display === 'none' || detailsElement.style.display === '') {
+    detailsElement.style.display = 'block';
+    link.textContent = currentLang === 'en' ? 'Show less' : 'Weniger anzeigen';
+  } else {
+    detailsElement.style.display = 'none';
+    link.textContent = currentLang === 'en' ? 'Learn more' : 'Mehr erfahren';
+  }
+}
 
 // Error handling
 window.addEventListener('error', function(e) {

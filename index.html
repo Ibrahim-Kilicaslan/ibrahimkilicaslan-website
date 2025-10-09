@@ -234,15 +234,29 @@
                     <div class="card-icon" style="background: var(--primary-gradient);">
                         <i class="fas fa-microchip"></i>
                     </div>
-                    <h3>Microservice Projekt</h3>
-                    <div class="subtitle">CAPSTONE PROJEKT</div>
-                    <p>Entwicklung einer automatisierten Anwendung auf Basis der Microservices-Architektur mit Java, Spring Boot und Spring Cloud, integriert mit MySQL. Containerisierung mit Docker, Bereitstellung auf Kubernetes-Cluster mit Rancher.</p>
+                    <h3>CAPSTONE PROJEKT - Microservice Projekt</h3>
+                    <div class="subtitle">ENTERPRISE MICROSERVICES ARCHITEKTUR</div>
+                    <p>Entwicklung einer automatisierten Anwendung auf Basis der Microservices-Architektur mit Java, Spring Boot und Spring Cloud... <a href="#" onclick="toggleProjectDetails(event, 'capstone-details')" style="color: var(--primary-color); font-weight: 600;">Mehr erfahren</a></p>
+                    <div id="capstone-details" class="project-details" style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                        <ul style="text-align: left; margin: 1rem 0; padding-left: 1.5rem; line-height: 1.8;">
+                            <li>Entwicklung einer automatisierten Anwendung auf Basis der Microservices-Architektur mit Java, Spring Boot und Spring Cloud, integriert mit MySQL</li>
+                            <li>Containerisierung der Anwendung mit Docker für konsistente und portable Umgebungen</li>
+                            <li>Bereitstellung der Microservices auf einem Kubernetes-Cluster, verwaltet mit Rancher</li>
+                            <li>Implementierung von CI/CD-Pipelines zur Automatisierung der Bereitstellung und Updates mit Jenkins</li>
+                            <li>Infrastrukturautomatisierung mit Terraform zur Skalierung der gesamten Infrastruktur auf AWS EC2-Instanzen</li>
+                            <li>Nutzung von Prometheus und Grafana zur kontinuierlichen Überwachung der Anwendung und Cluster-Performance</li>
+                            <li>Versionskontrolle und Teamzusammenarbeit über GitHub</li>
+                        </ul>
+                    </div>
                     <div class="skills-list" style="margin-top: 1rem;">
                         <span class="skill-tag" style="background: #28a745;">Java</span>
                         <span class="skill-tag" style="background: #6f42c1;">Spring Boot</span>
                         <span class="skill-tag" style="background: #007bff;">Docker</span>
                         <span class="skill-tag" style="background: #326ce5;">Kubernetes</span>
                         <span class="skill-tag" style="background: #dc3545;">Jenkins</span>
+                        <span class="skill-tag" style="background: #ff6b6b;">Terraform</span>
+                        <span class="skill-tag" style="background: #e6522c;">Prometheus</span>
+                        <span class="skill-tag" style="background: #f46800;">Grafana</span>
                     </div>
                 </div>
                 <div class="card">
@@ -354,7 +368,7 @@
                         <li><strong>Lernen und Präsentieren</strong> realer DevOps- und Cloud-Fähigkeiten</li>
                         <li><strong>Skalierbarkeit und Sicherheit</strong> mit AWS-Best-Practices</li>
                         <li><strong>Automatisierung</strong>: Keine manuellen Uploads, kein FTP, keine "Klick-und-Hoffen"-Bereitstellungen</li>
-                    </ul>
+            </ul>
                     
                     <h4 style="color: var(--text-primary); margin: 2rem 0 1rem 0;">Architektur-Übersicht</h4>
                     <p>Die Website ist eine statische HTML/CSS/JS-Site, gehostet auf AWS S3, global über CloudFront ausgeliefert, mit HTTPS (ACM) gesichert und DNS mit Route 53 verwaltet. Die gesamte Infrastruktur ist mit Terraform als Code definiert, und Bereitstellungen werden mit GitHub Actions automatisiert.</p>
@@ -365,8 +379,8 @@
                         <li><strong>Route 53:</strong> DNS-Verwaltung</li>
                         <li><strong>ACM:</strong> Kostenlose SSL-Zertifikate (automatische Verlängerung)</li>
                         <li><strong>GitHub Actions:</strong> CI/CD für automatische Bereitstellung</li>
-                    </ul>
-                    
+            </ul>
+
                     <h4 style="color: var(--text-primary); margin: 2rem 0 1rem 0;">Schritt für Schritt: Wie ich es gemacht habe</h4>
                     <ol style="margin: 1rem 0; padding-left: 2rem;">
                         <li><strong>Design & Frontend:</strong> Erstellung einer modernen, responsiven CV-Website mit HTML, CSS und JavaScript.</li>

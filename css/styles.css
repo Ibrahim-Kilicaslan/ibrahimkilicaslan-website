@@ -629,6 +629,29 @@ body.dark-mode .btn-outline {
     background: linear-gradient(145deg, #ffffff, #f8fafc);
 }
 
+/* Project Details */
+.project-details {
+    animation: fadeInUp 0.3s ease;
+}
+
+.project-details ul {
+    list-style-type: disc;
+    color: var(--text-secondary);
+}
+
+.project-details li {
+    margin-bottom: 0.5rem;
+    line-height: 1.8;
+}
+
+body.dark-mode .project-details ul {
+    color: var(--text-light);
+}
+
+body.dark-mode .project-details li {
+    color: #cbd5e0;
+}
+
 .card-icon {
     width: 60px;
     height: 60px;
