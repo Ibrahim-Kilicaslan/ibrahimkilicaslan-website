@@ -78,14 +78,46 @@ const translations = {
     },
     projects: {
       title: "Projects",
-      subtitle: "Some of my recent work and achievements",
-      blogWebsite: {
-        title: "Professional CV Website",
-        description: "Modern, responsive CV website with AWS infrastructure, automated deployment with GitHub Actions, and multilingual support (EN/DE)."
+      subtitle: "My most important technical projects and implementations",
+      microserviceProject: {
+        title: "Microservice Project",
+        subtitle: "CAPSTONE PROJECT",
+        description: "Development of an automated Enterprise application with Microservices architecture (Java, Spring Boot, Spring Cloud, MySQL), containerized with Docker, deployed on Kubernetes cluster with Rancher, CI/CD automation through Jenkins and Infrastructure as Code with Terraform on AWS.",
+        details: [
+          "Development of an automated application based on Microservices architecture with Java, Spring Boot and Spring Cloud, integrated with MySQL",
+          "Containerization of the application with Docker for consistent and portable environments",
+          "Deployment of Microservices on a Kubernetes cluster, managed with Rancher",
+          "Implementation of CI/CD pipelines for automation of deployment and updates with Jenkins",
+          "Infrastructure automation with Terraform for scaling the entire infrastructure on AWS EC2 instances",
+          "Use of Prometheus and Grafana for continuous monitoring of the application and cluster performance",
+          "Version control and team collaboration via GitHub"
+        ]
       },
-      petClinic: {
-        title: "Pet Clinic Application",
-        description: "Development and deployment of a blog web application on AWS Cloud Infrastructure with Django Framework. Load Balancing with ALB, Auto Scaling, RDS, S3, Lambda, DynamoDB, CloudFront and Route 53."
+      phonebookProject: {
+        title: "Microservices Phonebook",
+        subtitle: "KUBERNETES PROJECT",
+        description: "Development of a Phonebook-Microservice web application with MySQL database, to practically implement the Microservice architecture. The application includes Front-End and Back-End Services, dockerized and managed by Kubernetes deployments.",
+        details: [
+          "Project goal: Development of a Phonebook-Microservice web application with MySQL database, to practically implement the Microservice architecture",
+          "Architecture: The application includes a Front-End service and a Back-End service that interact with the MySQL database",
+          "Containerization: Both services were dockerized and deployed in containers",
+          "Orchestration: Management and scaling of services through Kubernetes deployments"
+        ]
+      },
+      cloudInfrastructure: {
+        title: "Cloud Infrastructure",
+        subtitle: "AWS PROJECT",
+        description: "Development and deployment of a Blog web application on AWS Cloud Infrastructure with Django Framework. Load Balancing with ALB, Auto Scaling, RDS, S3, Lambda, DynamoDB, CloudFront and Route 53.",
+        details: [
+          "Development and deployment of a Blog web application on AWS Cloud Infrastructure with Django Framework",
+          "Load Balancing with Application Load Balancer (ALB) for high availability",
+          "Auto Scaling for automatic adjustment of resources based on load",
+          "RDS (Relational Database Service) for managed databases",
+          "S3 for object storage and static content",
+          "Lambda for serverless functions",
+          "DynamoDB for NoSQL database",
+          "CloudFront and Route 53 for global content distribution and DNS management"
+        ]
       }
     },
     education: {
@@ -251,14 +283,46 @@ const translations = {
     },
     projects: {
       title: "Projekte",
-      subtitle: "Einige meiner aktuellen Arbeiten und Erfolge",
-      blogWebsite: {
-        title: "Professionelle CV-Website",
-        description: "Moderne, responsive CV-Website mit AWS-Infrastruktur, automatisierter Bereitstellung mit GitHub Actions und mehrsprachiger Unterstützung (EN/DE)."
+      subtitle: "Meine wichtigsten technischen Projekte und Implementierungen",
+      microserviceProject: {
+        title: "Microservice Projekt",
+        subtitle: "CAPSTONE PROJEKT",
+        description: "Entwicklung einer automatisierten Enterprise-Anwendung mit Microservices-Architektur (Java, Spring Boot, Spring Cloud, MySQL), containerisiert mit Docker, deployed auf Kubernetes-Cluster mit Rancher, CI/CD-Automatisierung durch Jenkins und Infrastructure as Code mit Terraform auf AWS.",
+        details: [
+          "Entwicklung einer automatisierten Anwendung auf Basis der Microservices-Architektur mit Java, Spring Boot und Spring Cloud, integriert mit MySQL",
+          "Containerisierung der Anwendung mit Docker für konsistente und portable Umgebungen",
+          "Bereitstellung der Microservices auf einem Kubernetes-Cluster, verwaltet mit Rancher",
+          "Implementierung von CI/CD-Pipelines zur Automatisierung der Bereitstellung und Updates mit Jenkins",
+          "Infrastrukturautomatisierung mit Terraform zur Skalierung der gesamten Infrastruktur auf AWS EC2-Instanzen",
+          "Nutzung von Prometheus und Grafana zur kontinuierlichen Überwachung der Anwendung und Cluster-Performance",
+          "Versionskontrolle und Teamzusammenarbeit über GitHub"
+        ]
       },
-      petClinic: {
-        title: "Pet Clinic Anwendung",
-        description: "Entwicklung und Bereitstellung einer Blog-Webanwendung auf AWS Cloud Infrastructure mit Django Framework. Load Balancing mit ALB, Auto Scaling, RDS, S3, Lambda, DynamoDB, CloudFront und Route 53."
+      phonebookProject: {
+        title: "Microservices Phonebook",
+        subtitle: "KUBERNETES PROJEKT",
+        description: "Entwicklung einer Phonebook-Microservice-Webanwendung mit MySQL-Datenbank, um die Microservice-Architektur praktisch umzusetzen. Die Anwendung umfasst Front-End und Back-End Services, dockerisiert und durch Kubernetes-Deployments verwaltet.",
+        details: [
+          "Projektziel: Entwicklung einer Phonebook-Microservice-Webanwendung mit MySQL-Datenbank, um die Microservice-Architektur praktisch umzusetzen",
+          "Architektur: Die Anwendung umfasst einen Front-End-Service und einen Back-End-Service, die mit der MySQL-Datenbank interagieren",
+          "Containerisierung: Beide Services wurden dockerisiert und in Containern bereitgestellt",
+          "Orchestrierung: Verwaltung und Skalierung der Services durch Kubernetes-Deployments"
+        ]
+      },
+      cloudInfrastructure: {
+        title: "Cloud Infrastructure",
+        subtitle: "AWS PROJEKT",
+        description: "Entwicklung und Bereitstellung einer Blog-Webanwendung auf AWS Cloud Infrastructure mit Django Framework. Load Balancing mit ALB, Auto Scaling, RDS, S3, Lambda, DynamoDB, CloudFront und Route 53.",
+        details: [
+          "Entwicklung und Bereitstellung einer Blog-Webanwendung auf AWS Cloud Infrastructure mit Django Framework",
+          "Load Balancing mit Application Load Balancer (ALB) für hohe Verfügbarkeit",
+          "Auto Scaling zur automatischen Anpassung der Ressourcen basierend auf der Last",
+          "RDS (Relational Database Service) für verwaltete Datenbanken",
+          "S3 für Objektspeicherung und statische Inhalte",
+          "Lambda für serverlose Funktionen",
+          "DynamoDB für NoSQL-Datenbank",
+          "CloudFront und Route 53 für globale Inhaltsverteilung und DNS-Verwaltung"
+        ]
       }
     },
     education: {
@@ -778,22 +842,75 @@ function updateProjectsSection(projects) {
   
   // Update project cards
   const projectCards = document.querySelectorAll('#projects .card');
-  if (projectCards.length >= 2) {
-    // First project - Blog Website
+  if (projectCards.length >= 3) {
+    // First project - Microservice Project
     const firstCard = projectCards[0];
     const firstTitle = firstCard.querySelector('h3');
-    const firstDescription = firstCard.querySelector('p');
+    const firstSubtitle = firstCard.querySelector('.subtitle');
+    const firstDescription = firstCard.querySelector('.project-summary');
+    const firstDetails = firstCard.querySelector('#capstone-details ul');
+    const firstButton = firstCard.querySelector('a[onclick*="capstone-details"]');
     
-    if (firstTitle) firstTitle.textContent = projects.blogWebsite.title;
-    if (firstDescription) firstDescription.textContent = projects.blogWebsite.description;
+    if (firstTitle) firstTitle.textContent = projects.microserviceProject.title;
+    if (firstSubtitle) firstSubtitle.textContent = projects.microserviceProject.subtitle;
+    if (firstDescription) firstDescription.textContent = projects.microserviceProject.description;
+    if (firstButton) firstButton.innerHTML = currentLanguage === 'en' ? '🔍 Learn more' : '🔍 Mehr erfahren';
     
-    // Second project - Pet Clinic
+    // Update details list
+    if (firstDetails && projects.microserviceProject.details) {
+      const listItems = firstDetails.querySelectorAll('li');
+      projects.microserviceProject.details.forEach((detail, index) => {
+        if (listItems[index]) {
+          listItems[index].textContent = detail;
+        }
+      });
+    }
+    
+    // Second project - Phonebook Project
     const secondCard = projectCards[1];
     const secondTitle = secondCard.querySelector('h3');
-    const secondDescription = secondCard.querySelector('p');
+    const secondSubtitle = secondCard.querySelector('.subtitle');
+    const secondDescription = secondCard.querySelector('.project-summary');
+    const secondDetails = secondCard.querySelector('#phonebook-details ul');
+    const secondButton = secondCard.querySelector('a[onclick*="phonebook-details"]');
     
-    if (secondTitle) secondTitle.textContent = projects.petClinic.title;
-    if (secondDescription) secondDescription.textContent = projects.petClinic.description;
+    if (secondTitle) secondTitle.textContent = projects.phonebookProject.title;
+    if (secondSubtitle) secondSubtitle.textContent = projects.phonebookProject.subtitle;
+    if (secondDescription) secondDescription.textContent = projects.phonebookProject.description;
+    if (secondButton) secondButton.innerHTML = currentLanguage === 'en' ? '🔍 Learn more' : '🔍 Mehr erfahren';
+    
+    // Update details list
+    if (secondDetails && projects.phonebookProject.details) {
+      const listItems = secondDetails.querySelectorAll('li');
+      projects.phonebookProject.details.forEach((detail, index) => {
+        if (listItems[index]) {
+          listItems[index].textContent = detail;
+        }
+      });
+    }
+    
+    // Third project - Cloud Infrastructure
+    const thirdCard = projectCards[2];
+    const thirdTitle = thirdCard.querySelector('h3');
+    const thirdSubtitle = thirdCard.querySelector('.subtitle');
+    const thirdDescription = thirdCard.querySelector('.project-summary');
+    const thirdDetails = thirdCard.querySelector('#aws-details ul');
+    const thirdButton = thirdCard.querySelector('a[onclick*="aws-details"]');
+    
+    if (thirdTitle) thirdTitle.textContent = projects.cloudInfrastructure.title;
+    if (thirdSubtitle) thirdSubtitle.textContent = projects.cloudInfrastructure.subtitle;
+    if (thirdDescription) thirdDescription.textContent = projects.cloudInfrastructure.description;
+    if (thirdButton) thirdButton.innerHTML = currentLanguage === 'en' ? '🔍 Learn more' : '🔍 Mehr erfahren';
+    
+    // Update details list
+    if (thirdDetails && projects.cloudInfrastructure.details) {
+      const listItems = thirdDetails.querySelectorAll('li');
+      projects.cloudInfrastructure.details.forEach((detail, index) => {
+        if (listItems[index]) {
+          listItems[index].textContent = detail;
+        }
+      });
+    }
   }
 }
 
