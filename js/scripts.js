@@ -20,7 +20,7 @@ const translations = {
       experience: "Professional Experience",
       skills: "Skills & Competencies", 
       projects: "Projects",
-      education: "Education",
+      education: "Studies",
       blog: "Blog",
       contact: "Contact"
     },
@@ -28,7 +28,7 @@ const translations = {
       experience: "My career journey and professional development",
       skills: "Technical skills and tools I work with",
       projects: "Some of my recent work and achievements", 
-      education: "My educational background and certifications",
+      education: "My Studies and Continuing Education",
       blog: "My thoughts and experiences from the tech world",
       contact: "Let's talk about your next project"
     },
@@ -89,8 +89,8 @@ const translations = {
       }
     },
     education: {
-      title: "Education",
-      subtitle: "My educational background and certifications",
+      title: "Studies",
+      subtitle: "My Studies and Continuing Education",
       clarusway: {
         title: "AWS SAA & DevOps Engineer Training",
         institution: "Clarusway IT Training School",
@@ -107,7 +107,7 @@ const translations = {
         title: "Bachelor's Degree Electrical Engineer",
         institution: "Kahramanmaras Sütcü Imam University",
         period: "September 2003 – June 2007",
-        description: "Fundamental engineering studies, which taught me analytical thinking and technical problem-solving skills."
+        description: "Built a foundation in analytical thinking, technical problem solving, and engineering principles."
       },
       english: {
         title: "English Language Stays",
@@ -193,7 +193,7 @@ const translations = {
       experience: "Berufserfahrungen",
       skills: "Kompetenzen",
       projects: "Projekte", 
-      education: "Bildung",
+      education: "Studium",
       blog: "Blog",
       contact: "Kontakt"
     },
@@ -201,7 +201,7 @@ const translations = {
       experience: "Meine berufliche Laufbahn und Expertise",
       skills: "Meine technischen Fähigkeiten und Expertisen",
       projects: "Meine wichtigsten technischen Projekte und Implementierungen",
-      education: "Meine Ausbildung und Weiterbildungen",
+      education: "Mein Studium und Weiterbildungen",
       blog: "Meine Gedanken und Erfahrungen aus der Tech-Welt",
       contact: "Lassen Sie uns über Ihr nächstes Projekt sprechen"
     },
@@ -262,8 +262,8 @@ const translations = {
       }
     },
     education: {
-      title: "Bildung",
-      subtitle: "Meine Ausbildung und Weiterbildungen",
+      title: "Studium",
+      subtitle: "Mein Studium und Weiterbildungen",
       clarusway: {
         title: "AWS SAA & DevOps Engineer Weiterbildung",
         institution: "Clarusway IT Training School",
@@ -280,7 +280,7 @@ const translations = {
         title: "Bachelor-Abschluss Elektroingenieur",
         institution: "Kahramanmaras Sütcü Imam Universität",
         period: "September 2003 – Juni 2007",
-        description: "Grundlegendes Ingenieursstudium, das mir analytisches Denken und technische Problemlösungsfähigkeiten vermittelt hat."
+        description: "Grundlagen in analytischem Denken, technischer Problemlösung und Ingenieurprinzipien aufgebaut."
       },
       english: {
         title: "Sprachaufenthalte Englisch",
@@ -1133,3 +1133,25 @@ function toggleProjectDetails(event, detailsId) {
 window.addEventListener('error', function(e) {
   console.error('JavaScript error:', e.error);
 });
+// Toggle project details
+function toggleProjectDetails(event, detailsId) {
+  event.preventDefault();
+  const detailsElement = document.getElementById(detailsId);
+  const link = event.currentTarget;
+  const card = link.closest('.card');
+  const summaryParagraph = card.querySelector('.project-summary');
+  
+  if (detailsElement.style.display === 'none' || detailsElement.style.display === '') {
+    detailsElement.style.display = 'block';
+    if (summaryParagraph) {
+      summaryParagraph.style.display = 'none'; // Hide summary
+    }
+    link.innerHTML = currentLanguage === 'en' ? '🔍 Show less' : '🔍 Weniger anzeigen';
+  } else {
+    detailsElement.style.display = 'none';
+    if (summaryParagraph) {
+      summaryParagraph.style.display = 'block'; // Show summary
+    }
+    link.innerHTML = currentLanguage === 'en' ? '🔍 Learn more' : '🔍 Mehr erfahren';
+  }
+}

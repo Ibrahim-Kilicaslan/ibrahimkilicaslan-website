@@ -234,9 +234,10 @@
                     <div class="card-icon" style="background: var(--primary-gradient);">
                         <i class="fas fa-microchip"></i>
                     </div>
-                    <h3>Microservice Projekt - CAPSTONE PROJEKT</h3>
-                    <div class="subtitle">ENTERPRISE MICROSERVICES ARCHITEKTUR</div>
-                    <p>Entwicklung einer automatisierten Enterprise-Anwendung mit Microservices-Architektur (Java, Spring Boot, Spring Cloud, MySQL), containerisiert mit Docker, deployed auf Kubernetes-Cluster mit Rancher, CI/CD-Automatisierung durch Jenkins und Infrastructure as Code mit Terraform auf AWS. <a href="#" onclick="toggleProjectDetails(event, 'capstone-details')" style="color: var(--primary-color); font-weight: 600;">Mehr erfahren</a></p>
+                    <h3>Microservice Projekt</h3>
+                    <div class="subtitle">CAPSTONE PROJEKT</div>
+                    <p class="project-summary">Entwicklung einer automatisierten Enterprise-Anwendung mit Microservices-Architektur (Java, Spring Boot, Spring Cloud, MySQL), containerisiert mit Docker, deployed auf Kubernetes-Cluster mit Rancher, CI/CD-Automatisierung durch Jenkins und Infrastructure as Code mit Terraform auf AWS.</p>
+                    <a href="#" onclick="toggleProjectDetails(event, 'capstone-details')" style="color: #667eea; font-weight: 600; text-decoration: underline; margin-top: 10px; display: inline-block;">🔍 Mehr erfahren</a>
                     <div id="capstone-details" class="project-details" style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
                         <ul style="text-align: left; margin: 1rem 0; padding-left: 1.5rem; line-height: 1.8;">
                             <li>Entwicklung einer automatisierten Anwendung auf Basis der Microservices-Architektur mit Java, Spring Boot und Spring Cloud, integriert mit MySQL</li>
@@ -263,14 +264,22 @@
                     <div class="card-icon" style="background: var(--secondary-gradient);">
                         <i class="fab fa-docker"></i>
                     </div>
-                    <h3>Kubernetes Microservices Phonebook</h3>
+                    <h3>Microservices Phonebook</h3>
                     <div class="subtitle">KUBERNETES PROJEKT</div>
-                    <p>Entwicklung einer Phonebook-Microservice-Webanwendung mit MySQL-Datenbank. Die Anwendung umfasst Front-End und Back-End Services, dockerisiert und durch Kubernetes-Deployments verwaltet.</p>
+                    <p class="project-summary">Entwicklung einer Phonebook-Microservice-Webanwendung mit MySQL-Datenbank, um die Microservice-Architektur praktisch umzusetzen. Die Anwendung umfasst Front-End und Back-End Services, dockerisiert und durch Kubernetes-Deployments verwaltet.</p>
+                    <a href="#" onclick="toggleProjectDetails(event, 'phonebook-details')" style="color: #667eea; font-weight: 600; text-decoration: underline; margin-top: 10px; display: inline-block;">🔍 Mehr erfahren</a>
+                    <div id="phonebook-details" class="project-details" style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                        <ul style="text-align: left; margin: 1rem 0; padding-left: 1.5rem; line-height: 1.8;">
+                            <li>Projektziel: Entwicklung einer Phonebook-Microservice-Webanwendung mit MySQL-Datenbank, um die Microservice-Architektur praktisch umzusetzen</li>
+                            <li>Architektur: Die Anwendung umfasst einen Front-End-Service und einen Back-End-Service, die mit der MySQL-Datenbank interagieren</li>
+                            <li>Containerisierung: Beide Services wurden dockerisiert und in Containern bereitgestellt</li>
+                            <li>Orchestrierung: Verwaltung und Skalierung der Services durch Kubernetes-Deployments</li>
+                        </ul>
+                    </div>
                     <div class="skills-list" style="margin-top: 1rem;">
                         <span class="skill-tag" style="background: #326ce5;">Kubernetes</span>
                         <span class="skill-tag" style="background: #007bff;">Docker</span>
                         <span class="skill-tag" style="background: #e97627;">MySQL</span>
-                        <span class="skill-tag" style="background: #61dafb;">React</span>
                     </div>
                 </div>
             <div class="card">
@@ -279,7 +288,20 @@
                     </div>
                     <h3>Cloud Infrastructure</h3>
                     <div class="subtitle">AWS PROJEKT</div>
-                    <p>Entwicklung und Bereitstellung einer Blog-Webanwendung auf AWS Cloud Infrastructure mit Django Framework. Load Balancing mit ALB, Auto Scaling, RDS, S3, Lambda, DynamoDB, CloudFront und Route 53.</p>
+                    <p class="project-summary">Entwicklung und Bereitstellung einer Blog-Webanwendung auf AWS Cloud Infrastructure mit Django Framework. Load Balancing mit ALB, Auto Scaling, RDS, S3, Lambda, DynamoDB, CloudFront und Route 53.</p>
+                    <a href="#" onclick="toggleProjectDetails(event, 'aws-details')" style="color: #667eea; font-weight: 600; text-decoration: underline; margin-top: 10px; display: inline-block;">🔍 Mehr erfahren</a>
+                    <div id="aws-details" class="project-details" style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                        <ul style="text-align: left; margin: 1rem 0; padding-left: 1.5rem; line-height: 1.8;">
+                            <li>Entwicklung und Bereitstellung einer Blog-Webanwendung auf AWS Cloud Infrastructure mit Django Framework</li>
+                            <li>Load Balancing mit Application Load Balancer (ALB) für hohe Verfügbarkeit</li>
+                            <li>Auto Scaling zur automatischen Anpassung der Ressourcen basierend auf der Last</li>
+                            <li>RDS (Relational Database Service) für verwaltete Datenbanken</li>
+                            <li>S3 für Objektspeicherung und statische Inhalte</li>
+                            <li>Lambda für serverlose Funktionen</li>
+                            <li>DynamoDB für NoSQL-Datenbank</li>
+                            <li>CloudFront und Route 53 für globale Inhaltsverteilung und DNS-Verwaltung</li>
+                        </ul>
+                    </div>
                     <div class="skills-list" style="margin-top: 1rem;">
                         <span class="skill-tag" style="background: #ff9900;">AWS</span>
                         <span class="skill-tag" style="background: #092e20;">Django</span>
@@ -295,8 +317,8 @@
     <section id="education" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Bildung</h2>
-                <p class="section-subtitle">Meine Ausbildung und Weiterbildungen</p>
+                <h2 class="section-title">Studium</h2>
+                <p class="section-subtitle">Mein Studium und Weiterbildungen</p>
             </div>
             <div class="grid grid-2">
                 <div class="card">
@@ -321,7 +343,7 @@
                     </div>
                     <h3>Bachelor-Abschluss Elektroingenieur</h3>
                     <div class="subtitle">Kahramanmaras Sütcü Imam Universität | September 2003 – Juni 2007</div>
-                    <p>Grundlegendes Ingenieursstudium, das mir analytisches Denken und technische Problemlösungsfähigkeiten vermittelt hat.</p>
+                    <p>Grundlagen in analytischem Denken, technischer Problemlösung und Ingenieurprinzipien aufgebaut.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon" style="background: var(--dark-gradient);">
