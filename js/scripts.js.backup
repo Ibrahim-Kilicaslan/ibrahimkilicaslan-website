@@ -20,7 +20,7 @@ const translations = {
       experience: "Professional Experience",
       skills: "Skills & Competencies", 
       projects: "Projects",
-      education: "Studies",
+      education: "Education",
       blog: "Blog",
       contact: "Contact"
     },
@@ -28,7 +28,7 @@ const translations = {
       experience: "My career journey and professional development",
       skills: "Technical skills and tools I work with",
       projects: "Some of my recent work and achievements", 
-      education: "My Studies and Continuing Education",
+      education: "My educational background and certifications",
       blog: "My thoughts and experiences from the tech world",
       contact: "Let's talk about your next project"
     },
@@ -78,51 +78,19 @@ const translations = {
     },
     projects: {
       title: "Projects",
-      subtitle: "My most important technical projects and implementations",
-      microserviceProject: {
-        title: "Microservice Project",
-        subtitle: "CAPSTONE PROJECT",
-        description: "Development of an automated Enterprise application with Microservices architecture (Java, Spring Boot, Spring Cloud, MySQL), containerized with Docker, deployed on Kubernetes cluster with Rancher, CI/CD automation through Jenkins and Infrastructure as Code with Terraform on AWS.",
-        details: [
-          "Development of an automated application based on Microservices architecture with Java, Spring Boot and Spring Cloud, integrated with MySQL",
-          "Containerization of the application with Docker for consistent and portable environments",
-          "Deployment of Microservices on a Kubernetes cluster, managed with Rancher",
-          "Implementation of CI/CD pipelines for automation of deployment and updates with Jenkins",
-          "Infrastructure automation with Terraform for scaling the entire infrastructure on AWS EC2 instances",
-          "Use of Prometheus and Grafana for continuous monitoring of the application and cluster performance",
-          "Version control and team collaboration via GitHub"
-        ]
+      subtitle: "Some of my recent work and achievements",
+      blogWebsite: {
+        title: "Professional CV Website",
+        description: "Modern, responsive CV website with AWS infrastructure, automated deployment with GitHub Actions, and multilingual support (EN/DE)."
       },
-      phonebookProject: {
-        title: "Microservices Phonebook",
-        subtitle: "KUBERNETES PROJECT",
-        description: "Development of a Phonebook-Microservice web application with MySQL database, to practically implement the Microservice architecture. The application includes Front-End and Back-End Services, dockerized and managed by Kubernetes deployments.",
-        details: [
-          "Project goal: Development of a Phonebook-Microservice web application with MySQL database, to practically implement the Microservice architecture",
-          "Architecture: The application includes a Front-End service and a Back-End service that interact with the MySQL database",
-          "Containerization: Both services were dockerized and deployed in containers",
-          "Orchestration: Management and scaling of services through Kubernetes deployments"
-        ]
-      },
-      cloudInfrastructure: {
-        title: "Cloud Infrastructure",
-        subtitle: "AWS PROJECT",
-        description: "Development and deployment of a Blog web application on AWS Cloud Infrastructure with Django Framework. Load Balancing with ALB, Auto Scaling, RDS, S3, Lambda, DynamoDB, CloudFront and Route 53.",
-        details: [
-          "Development and deployment of a Blog web application on AWS Cloud Infrastructure with Django Framework",
-          "Load Balancing with Application Load Balancer (ALB) for high availability",
-          "Auto Scaling for automatic adjustment of resources based on load",
-          "RDS (Relational Database Service) for managed databases",
-          "S3 for object storage and static content",
-          "Lambda for serverless functions",
-          "DynamoDB for NoSQL database",
-          "CloudFront and Route 53 for global content distribution and DNS management"
-        ]
+      petClinic: {
+        title: "Pet Clinic Application",
+        description: "Development and deployment of a blog web application on AWS Cloud Infrastructure with Django Framework. Load Balancing with ALB, Auto Scaling, RDS, S3, Lambda, DynamoDB, CloudFront and Route 53."
       }
     },
     education: {
-      title: "Studies",
-      subtitle: "My Studies and Continuing Education",
+      title: "Education",
+      subtitle: "My educational background and certifications",
       clarusway: {
         title: "AWS SAA & DevOps Engineer Training",
         institution: "Clarusway IT Training School",
@@ -139,7 +107,7 @@ const translations = {
         title: "Bachelor's Degree Electrical Engineer",
         institution: "Kahramanmaras Sütcü Imam University",
         period: "September 2003 – June 2007",
-        description: "Built a foundation in analytical thinking, technical problem solving, and engineering principles."
+        description: "Fundamental engineering studies, which taught me analytical thinking and technical problem-solving skills."
       },
       english: {
         title: "English Language Stays",
@@ -225,7 +193,7 @@ const translations = {
       experience: "Berufserfahrungen",
       skills: "Kompetenzen",
       projects: "Projekte", 
-      education: "Studium",
+      education: "Bildung",
       blog: "Blog",
       contact: "Kontakt"
     },
@@ -233,7 +201,7 @@ const translations = {
       experience: "Meine berufliche Laufbahn und Expertise",
       skills: "Meine technischen Fähigkeiten und Expertisen",
       projects: "Meine wichtigsten technischen Projekte und Implementierungen",
-      education: "Mein Studium und Weiterbildungen",
+      education: "Meine Ausbildung und Weiterbildungen",
       blog: "Meine Gedanken und Erfahrungen aus der Tech-Welt",
       contact: "Lassen Sie uns über Ihr nächstes Projekt sprechen"
     },
@@ -283,51 +251,19 @@ const translations = {
     },
     projects: {
       title: "Projekte",
-      subtitle: "Meine wichtigsten technischen Projekte und Implementierungen",
-      microserviceProject: {
-        title: "Microservice Projekt",
-        subtitle: "CAPSTONE PROJEKT",
-        description: "Entwicklung einer automatisierten Enterprise-Anwendung mit Microservices-Architektur (Java, Spring Boot, Spring Cloud, MySQL), containerisiert mit Docker, deployed auf Kubernetes-Cluster mit Rancher, CI/CD-Automatisierung durch Jenkins und Infrastructure as Code mit Terraform auf AWS.",
-        details: [
-          "Entwicklung einer automatisierten Anwendung auf Basis der Microservices-Architektur mit Java, Spring Boot und Spring Cloud, integriert mit MySQL",
-          "Containerisierung der Anwendung mit Docker für konsistente und portable Umgebungen",
-          "Bereitstellung der Microservices auf einem Kubernetes-Cluster, verwaltet mit Rancher",
-          "Implementierung von CI/CD-Pipelines zur Automatisierung der Bereitstellung und Updates mit Jenkins",
-          "Infrastrukturautomatisierung mit Terraform zur Skalierung der gesamten Infrastruktur auf AWS EC2-Instanzen",
-          "Nutzung von Prometheus und Grafana zur kontinuierlichen Überwachung der Anwendung und Cluster-Performance",
-          "Versionskontrolle und Teamzusammenarbeit über GitHub"
-        ]
+      subtitle: "Einige meiner aktuellen Arbeiten und Erfolge",
+      blogWebsite: {
+        title: "Professionelle CV-Website",
+        description: "Moderne, responsive CV-Website mit AWS-Infrastruktur, automatisierter Bereitstellung mit GitHub Actions und mehrsprachiger Unterstützung (EN/DE)."
       },
-      phonebookProject: {
-        title: "Microservices Phonebook",
-        subtitle: "KUBERNETES PROJEKT",
-        description: "Entwicklung einer Phonebook-Microservice-Webanwendung mit MySQL-Datenbank, um die Microservice-Architektur praktisch umzusetzen. Die Anwendung umfasst Front-End und Back-End Services, dockerisiert und durch Kubernetes-Deployments verwaltet.",
-        details: [
-          "Projektziel: Entwicklung einer Phonebook-Microservice-Webanwendung mit MySQL-Datenbank, um die Microservice-Architektur praktisch umzusetzen",
-          "Architektur: Die Anwendung umfasst einen Front-End-Service und einen Back-End-Service, die mit der MySQL-Datenbank interagieren",
-          "Containerisierung: Beide Services wurden dockerisiert und in Containern bereitgestellt",
-          "Orchestrierung: Verwaltung und Skalierung der Services durch Kubernetes-Deployments"
-        ]
-      },
-      cloudInfrastructure: {
-        title: "Cloud Infrastructure",
-        subtitle: "AWS PROJEKT",
-        description: "Entwicklung und Bereitstellung einer Blog-Webanwendung auf AWS Cloud Infrastructure mit Django Framework. Load Balancing mit ALB, Auto Scaling, RDS, S3, Lambda, DynamoDB, CloudFront und Route 53.",
-        details: [
-          "Entwicklung und Bereitstellung einer Blog-Webanwendung auf AWS Cloud Infrastructure mit Django Framework",
-          "Load Balancing mit Application Load Balancer (ALB) für hohe Verfügbarkeit",
-          "Auto Scaling zur automatischen Anpassung der Ressourcen basierend auf der Last",
-          "RDS (Relational Database Service) für verwaltete Datenbanken",
-          "S3 für Objektspeicherung und statische Inhalte",
-          "Lambda für serverlose Funktionen",
-          "DynamoDB für NoSQL-Datenbank",
-          "CloudFront und Route 53 für globale Inhaltsverteilung und DNS-Verwaltung"
-        ]
+      petClinic: {
+        title: "Pet Clinic Anwendung",
+        description: "Entwicklung und Bereitstellung einer Blog-Webanwendung auf AWS Cloud Infrastructure mit Django Framework. Load Balancing mit ALB, Auto Scaling, RDS, S3, Lambda, DynamoDB, CloudFront und Route 53."
       }
     },
     education: {
-      title: "Studium",
-      subtitle: "Mein Studium und Weiterbildungen",
+      title: "Bildung",
+      subtitle: "Meine Ausbildung und Weiterbildungen",
       clarusway: {
         title: "AWS SAA & DevOps Engineer Weiterbildung",
         institution: "Clarusway IT Training School",
@@ -344,7 +280,7 @@ const translations = {
         title: "Bachelor-Abschluss Elektroingenieur",
         institution: "Kahramanmaras Sütcü Imam Universität",
         period: "September 2003 – Juni 2007",
-        description: "Grundlagen in analytischem Denken, technischer Problemlösung und Ingenieurprinzipien aufgebaut."
+        description: "Grundlegendes Ingenieursstudium, das mir analytisches Denken und technische Problemlösungsfähigkeiten vermittelt hat."
       },
       english: {
         title: "Sprachaufenthalte Englisch",
@@ -653,10 +589,15 @@ function updateBlogSection(blog) {
     `;
   }
   
-  // Update full blog content with current language
+  // Update full blog content - only if it's currently visible
   const blogFullContent = document.querySelector('.blog-full-content');
-  if (blogFullContent) {
+  if (blogFullContent && blogFullContent.style.display !== 'none') {
     blogFullContent.innerHTML = `
+      <h3>${blog.title}</h3>
+      <div class="subtitle" style="margin-bottom: 1.5rem;">
+        <strong>${blog.author}</strong> Ibrahim Kilicaslan | <strong>${blog.date}</strong> 22.07.2025
+      </div>
+      
       <p>${blog.introduction}</p>
       <p>${blog.introduction2}</p>
       
@@ -845,75 +786,22 @@ function updateProjectsSection(projects) {
   
   // Update project cards
   const projectCards = document.querySelectorAll('#projects .card');
-  if (projectCards.length >= 3) {
-    // First project - Microservice Project
+  if (projectCards.length >= 2) {
+    // First project - Blog Website
     const firstCard = projectCards[0];
     const firstTitle = firstCard.querySelector('h3');
-    const firstSubtitle = firstCard.querySelector('.subtitle');
-    const firstDescription = firstCard.querySelector('.project-summary');
-    const firstDetails = firstCard.querySelector('#capstone-details ul');
-    const firstButton = firstCard.querySelector('a[onclick*="capstone-details"]');
+    const firstDescription = firstCard.querySelector('p');
     
-    if (firstTitle) firstTitle.textContent = projects.microserviceProject.title;
-    if (firstSubtitle) firstSubtitle.textContent = projects.microserviceProject.subtitle;
-    if (firstDescription) firstDescription.textContent = projects.microserviceProject.description;
-    if (firstButton) firstButton.innerHTML = currentLanguage === 'en' ? '🔍 Learn more' : '🔍 Mehr erfahren';
+    if (firstTitle) firstTitle.textContent = projects.blogWebsite.title;
+    if (firstDescription) firstDescription.textContent = projects.blogWebsite.description;
     
-    // Update details list
-    if (firstDetails && projects.microserviceProject.details) {
-      const listItems = firstDetails.querySelectorAll('li');
-      projects.microserviceProject.details.forEach((detail, index) => {
-        if (listItems[index]) {
-          listItems[index].textContent = detail;
-        }
-      });
-    }
-    
-    // Second project - Phonebook Project
+    // Second project - Pet Clinic
     const secondCard = projectCards[1];
     const secondTitle = secondCard.querySelector('h3');
-    const secondSubtitle = secondCard.querySelector('.subtitle');
-    const secondDescription = secondCard.querySelector('.project-summary');
-    const secondDetails = secondCard.querySelector('#phonebook-details ul');
-    const secondButton = secondCard.querySelector('a[onclick*="phonebook-details"]');
+    const secondDescription = secondCard.querySelector('p');
     
-    if (secondTitle) secondTitle.textContent = projects.phonebookProject.title;
-    if (secondSubtitle) secondSubtitle.textContent = projects.phonebookProject.subtitle;
-    if (secondDescription) secondDescription.textContent = projects.phonebookProject.description;
-    if (secondButton) secondButton.innerHTML = currentLanguage === 'en' ? '🔍 Learn more' : '🔍 Mehr erfahren';
-    
-    // Update details list
-    if (secondDetails && projects.phonebookProject.details) {
-      const listItems = secondDetails.querySelectorAll('li');
-      projects.phonebookProject.details.forEach((detail, index) => {
-        if (listItems[index]) {
-          listItems[index].textContent = detail;
-        }
-      });
-    }
-    
-    // Third project - Cloud Infrastructure
-    const thirdCard = projectCards[2];
-    const thirdTitle = thirdCard.querySelector('h3');
-    const thirdSubtitle = thirdCard.querySelector('.subtitle');
-    const thirdDescription = thirdCard.querySelector('.project-summary');
-    const thirdDetails = thirdCard.querySelector('#aws-details ul');
-    const thirdButton = thirdCard.querySelector('a[onclick*="aws-details"]');
-    
-    if (thirdTitle) thirdTitle.textContent = projects.cloudInfrastructure.title;
-    if (thirdSubtitle) thirdSubtitle.textContent = projects.cloudInfrastructure.subtitle;
-    if (thirdDescription) thirdDescription.textContent = projects.cloudInfrastructure.description;
-    if (thirdButton) thirdButton.innerHTML = currentLanguage === 'en' ? '🔍 Learn more' : '🔍 Mehr erfahren';
-    
-    // Update details list
-    if (thirdDetails && projects.cloudInfrastructure.details) {
-      const listItems = thirdDetails.querySelectorAll('li');
-      projects.cloudInfrastructure.details.forEach((detail, index) => {
-        if (listItems[index]) {
-          listItems[index].textContent = detail;
-        }
-      });
-    }
+    if (secondTitle) secondTitle.textContent = projects.petClinic.title;
+    if (secondDescription) secondDescription.textContent = projects.petClinic.description;
   }
 }
 
@@ -988,11 +876,57 @@ function toggleBlogContent(button) {
   const btnText = button.querySelector('.btn-text');
   
   if (fullContent.style.display === 'none' || fullContent.style.display === '') {
-    // Show full content
+    // Show full content - update with current language
+    const blog = translations[currentLanguage].blog;
+    fullContent.innerHTML = `
+      <h3>${blog.title}</h3>
+      <div class="subtitle" style="margin-bottom: 1.5rem;">
+        <strong>${blog.author}</strong> Ibrahim Kilicaslan | <strong>${blog.date}</strong> 22.07.2025
+      </div>
+      
+      <p>${blog.introduction}</p>
+      <p>${blog.introduction2}</p>
+      
+      <h4 style="color: var(--text-primary); margin: 2rem 0 1rem 0;">${blog.whyNotBuilder}</h4>
+      <ul style="margin: 1rem 0; padding-left: 2rem;">
+        ${blog.whyNotBuilderList.map(item => `<li><strong>${item}</strong></li>`).join('')}
+      </ul>
+      
+      <h4 style="color: var(--text-primary); margin: 2rem 0 1rem 0;">${blog.architecture}</h4>
+      <p>${blog.architectureDesc}</p>
+      
+      <ul style="margin: 1rem 0; padding-left: 2rem;">
+        ${blog.architectureList.map(item => `<li><strong>${item}</strong></li>`).join('')}
+      </ul>
+      
+      <h4 style="color: var(--text-primary); margin: 2rem 0 1rem 0;">${blog.stepByStep}</h4>
+      <ol style="margin: 1rem 0; padding-left: 2rem;">
+        ${blog.steps.map(step => `<li><strong>${step}</strong></li>`).join('')}
+      </ol>
+      
+      <h4 style="color: var(--text-primary); margin: 2rem 0 1rem 0;">${blog.conclusion}</h4>
+      <p>${blog.conclusion1}</p>
+      <p>${blog.conclusion2}</p>
+      
+      <h4 style="color: var(--text-primary); margin: 2rem 0 1rem 0;">${blog.technicalArch}</h4>
+      <div class="skills-list" style="margin: 1rem 0;">
+        <span class="skill-tag" style="background: #ff9900;">S3</span>
+        <span class="skill-tag" style="background: #232f3e;">CloudFront</span>
+        <span class="skill-tag" style="background: #ff9900;">Route 53</span>
+        <span class="skill-tag" style="background: #ff9900;">ACM</span>
+        <span class="skill-tag" style="background: #7c3aed;">Terraform</span>
+        <span class="skill-tag" style="background: #2088ff;">GitHub Actions</span>
+      </div>
+      
+      <p style="margin-top: 1.5rem; font-size: 1.1rem; font-weight: 600;">
+        <strong>${blog.successMessage}<br>Ibrahim Kilicaslan</strong>
+      </p>
+    `;
+    
     fullContent.style.display = 'block';
     excerpt.style.display = 'none';
     button.classList.add('expanded');
-    btnText.textContent = translations[currentLanguage].blog.readLess;
+    btnText.textContent = blog.readLess;
     
     // Smooth scroll to button after content loads
     setTimeout(() => {
@@ -1234,32 +1168,16 @@ const optimizedScrollHandler = throttle(() => {
 
 window.addEventListener('scroll', optimizedScrollHandler);
 
-// Toggle project details
+// Error handling
+window.addEventListener('error', function(e) {
+  console.error('JavaScript error:', e.error);
+});// Toggle project details
 function toggleProjectDetails(event, detailsId) {
   event.preventDefault();
   const detailsElement = document.getElementById(detailsId);
   const link = event.target;
-  
-  if (detailsElement.style.display === 'none' || detailsElement.style.display === '') {
-    detailsElement.style.display = 'block';
-    link.textContent = currentLang === 'en' ? 'Show less' : 'Weniger anzeigen';
-  } else {
-    detailsElement.style.display = 'none';
-    link.textContent = currentLang === 'en' ? 'Learn more' : 'Mehr erfahren';
-  }
-}
-
-// Error handling
-window.addEventListener('error', function(e) {
-  console.error('JavaScript error:', e.error);
-});
-// Toggle project details
-function toggleProjectDetails(event, detailsId) {
-  event.preventDefault();
-  const detailsElement = document.getElementById(detailsId);
-  const link = event.currentTarget;
-  const card = link.closest('.card');
-  const summaryParagraph = card.querySelector('.project-summary');
+  const card = link.closest('.card'); // Get the parent card
+  const summaryParagraph = card.querySelector('p'); // Get the summary paragraph within the card
   
   if (detailsElement.style.display === 'none' || detailsElement.style.display === '') {
     detailsElement.style.display = 'block';
@@ -1280,3 +1198,84 @@ function toggleProjectDetails(event, detailsId) {
 window.addEventListener('error', function(e) {
   console.error('JavaScript error:', e.error);
 });
+  if (!loader) return;
+  
+  window.addEventListener('load', () => {
+      setTimeout(() => {
+          loader.style.opacity = '0';
+          loader.style.visibility = 'hidden';
+          document.body.style.overflow = 'auto';
+      }, 500);
+  });
+}
+
+// Initialize all features
+document.addEventListener('DOMContentLoaded', function() {
+  initializeLoader();
+  initializeParallax();
+  initializeTypingEffect();
+  animateSkillsProgress();
+  animateCounters();
+  initializeCardEffects();
+});
+
+// Utility functions
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+      const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+  };
+}
+
+function throttle(func, limit) {
+  let inThrottle;
+  return function() {
+      const args = arguments;
+      const context = this;
+      if (!inThrottle) {
+          func.apply(context, args);
+          inThrottle = true;
+          setTimeout(() => inThrottle = false, limit);
+      }
+  };
+}
+
+// Performance optimized scroll events
+const optimizedScrollHandler = throttle(() => {
+  // Add any scroll-dependent functions here
+}, 16);
+
+window.addEventListener('scroll', optimizedScrollHandler);
+
+// Toggle project details
+function toggleProjectDetails(event, detailsId) {
+  event.preventDefault();
+  const detailsElement = document.getElementById(detailsId);
+  const link = event.target;
+  const card = link.closest('.card'); // Get the parent card
+  const summaryParagraph = card.querySelector('p'); // Get the summary paragraph within the card
+  
+  if (detailsElement.style.display === 'none' || detailsElement.style.display === '') {
+    detailsElement.style.display = 'block';
+    if (summaryParagraph) {
+      summaryParagraph.style.display = 'none'; // Hide summary
+    }
+    link.innerHTML = currentLanguage === 'en' ? '🔍 Show less' : '🔍 Weniger anzeigen';
+  } else {
+    detailsElement.style.display = 'none';
+    if (summaryParagraph) {
+      summaryParagraph.style.display = 'block'; // Show summary
+    }
+    link.innerHTML = currentLanguage === 'en' ? '🔍 Learn more' : '🔍 Mehr erfahren';
+  }
+}
+// Error handling
+window.addEventListener('error', function(e) {
+  console.error('JavaScript error:', e.error);
+});
+
